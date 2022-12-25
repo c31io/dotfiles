@@ -1,0 +1,3 @@
+; find /usr/share/icons ~/.local/share/icons ~/.icons -type d -name "cursors"
+
+Xcursor.theme: ComixCursors-Black

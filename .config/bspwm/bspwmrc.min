@@ -1,0 +1,16 @@
+#! /bin/sh
+
+pidof sxhkd > /dev/null || sxhkd &
+
+#wmname LG3D
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+bspc config border_width         0
+bspc config window_gap           0
+
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a polybar sticky=on
+bspc rule -a flal state=floating rectangle=1000x800+460+140

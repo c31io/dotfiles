@@ -1,0 +1,11 @@
+set shell fish
+
+cmd edit ${{
+    nvim $f
+}}
+map e edit
+
+cmd open &xdg-open $f
+map o open
+
+map x $$f
