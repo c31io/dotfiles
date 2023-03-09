@@ -1,34 +1,38 @@
 # XF86s
 XF86MonBrightness{Up,Down}
-    light -{A,U} 5
+  light -{A,U} 5
 XF86AudioMute
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86Audio{Raise,Lower}Volume
-    pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+  pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
 XF86Audio{Prev,Next,Play,Pause}
-    mpc -q {prev,next,toggle,toggle}
+  mpc -q {prev,next,toggle,toggle}
 
 # apps
 super + Return
 	alacritty
 super + shift + Return
-    alacritty --class flal
+  alacritty --class flal
 super + @space
 	dmenu_run
 super + Escape
 	pkill -USR1 -x sxhkd
 super + F1
 	firefox
+super + F2
+    chrome
+super + F3
+	google-chrome-stable
 super + F8
-    feh --bg-fill --randomize ~/Pictures/feh/*
+  feh --bg-fill --randomize ~/Pictures/feh/*
 super + F7
-    polybar-msg cmd hide; bspc config top_padding 0
+  polybar-msg cmd hide; bspc config top_padding 0
 super + shift + F7
-    polybar-msg cmd show; bspc config top_padding 21
+  polybar-msg cmd show; bspc config top_padding 21
 Print
-    scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
+  scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
 shift + Print
-    scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
+  scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
 
 # bspwm
 super + alt + {q,r}

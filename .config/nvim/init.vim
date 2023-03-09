@@ -8,15 +8,40 @@ set hlsearch                " highlight search
 set ignorecase              " case insensitive
 set incsearch               " incremental search
 set mouse=a                 " enable mouse click
-set mouse=v                 " middle-click paste with
+"set mouse=v                 " middle-click paste with
 set number                  " add line numbers
 set relativenumber
-set shiftwidth=4            " width for autoindents
 set showmatch               " show matching
-set softtabstop=4           " so <BS> does the right thing
-set tabstop=4               " number of columns occupied by a tab
+let tab=4
+let &shiftwidth=tab         " width for autoindents
+let &softtabstop=tab        " so <BS> does the right thing
+let &tabstop=tab            " number of columns occupied by a tab
 syntax on                   " syntax highlighting
 
-lua require('plugins')
+"colorscheme terafox
+"colorscheme nightfox
+colorscheme nordfox
 
-colorscheme terafox
+lua require('plugins')
+lua require('rust-tools-config')
+lua require('treesitter-config')
+lua require('dap-config')
+lua require('opts')
+lua require('tabby-config')
+lua require('feline-config')
+
+if exists(':GuiFont')
+  GuiFont FiraCode Nerd Font:h13.5
+  "GuiFont Fira Code:h13.5
+  "GuiFont JetBrains Mono:h13.5
+
+endif
+if exists(':GuiWindowOpacity')
+  GuiWindowOpacity 0.8
+endif
+if exists(':GuiRenderLigature')
+  GuiRenderLigature 1
+endif
+if exists(':GuiScrollBar')
+  GuiScrollBar 0
+endif
