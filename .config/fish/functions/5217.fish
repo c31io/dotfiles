@@ -10,18 +10,23 @@ function _count_down
 end
 
 function 5217
+    set this_workspace (bspc query -D -d focused --names)
     while true
         clear
         echo '52 min work' | figlet | lolcat
         mpc pause | lolcat
         echo
         _count_down 52
-        sleep 1
+        sleep 1 # double press C-c to exit
+
+        set that_workspace (bspc query -D -d focused --names)
         clear
+        bspc desktop -f $this_workspace
         echo '17 min rest' | figlet | lolcat
         mpc play | lolcat
         echo
         _count_down 17
-        sleep 1
+        sleep 1 # double press C-c to exit
+        bspc desktop -f $that_workspace
     end
 end
