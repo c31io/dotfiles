@@ -1,7 +1,5 @@
 # Dotfiles
 
-*Manually copy* these dotfiles to $HOME.
+Clone to your `$HOME` and install `stow`.
 
-They work on my machine with certain packages.
-
-**Use with caution.**
+From `$HOME/dotfiles`, to install nvim config for example, run `stow nvim`.
