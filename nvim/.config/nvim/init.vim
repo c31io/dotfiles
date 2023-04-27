@@ -1,3 +1,4 @@
+" Native settings
 filetype plugin indent on   " allow auto-indenting depending on file type
 filetype plugin on
 set autoindent              " indent a new line
@@ -18,11 +19,11 @@ let &softtabstop=tab        " so <BS> does the right thing
 let &tabstop=tab            " number of columns occupied by a tab
 syntax on                   " syntax highlighting
 
+" Lua settings
 lua require('config.nightfox')
 "colorscheme terafox
 "colorscheme nightfox
 colorscheme nordfox
-
 lua require('plugins')
 lua require('config.nvim-tree')
 lua require('config.cmp')
@@ -33,6 +34,25 @@ lua require('config.tabby')
 lua require('config.feline')
 lua require('opts')
 
+" Git commands
+map <Leader>gf :!git fetch <Enter>
+map <Leader>gs :!git status <Enter>
+map <Leader>gl :!gl <Enter>
+map <Leader>gc :terminal git commit <Enter>ii
+map <Leader>ga :!git add --all <Enter>
+" Cargo commands
+map <Leader>cf :!cargo fmt <Enter>
+map <Leader>cc :!cargo check <Enter>
+map <Leader>cr :!cargo run <Enter>
+" Haskell commands
+map <Leader>hr :terminal ghci *.hs <Enter>i
+
+" Use CTRL-S for saving in all modes
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>
+
+" Font settings for neovim-qt
 if exists(':GuiFont')
   GuiFont FiraCode Nerd Font:h13.5
   "GuiFont Fira Code:h13.5
