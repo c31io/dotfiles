@@ -23,6 +23,8 @@ super + F2
     chrome
 super + F3
 	google-chrome-stable
+super + F4
+    solfege
 super + F8
   feh --bg-fill --randomize ~/Pictures/feh/*
 super + F7

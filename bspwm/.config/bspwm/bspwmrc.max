@@ -23,4 +23,3 @@ pidof picom > /dev/null || picom &
 pidof conky > /dev/null || conky &
 pidof polybar > /dev/null || polybar &
 pidof fcitx5 > /dev/null || fcitx5 -d &
-pidof clash > /dev/null || clash &

@@ -35,17 +35,19 @@ lua require('config.feline')
 lua require('opts')
 
 " Git commands
-map <Leader>gf :!git fetch <Enter>
-map <Leader>gs :!git status <Enter>
-map <Leader>gl :!gl <Enter>
-map <Leader>gc :terminal git commit <Enter>ii
-map <Leader>ga :!git add --all <Enter>
+map <Leader>gf :!git fetch<CR>
+map <Leader>gs :!git status<CR>
+map <Leader>gl :!gl<CR>
+map <Leader>gc :terminal git commit<CR>ii
+map <Leader>ga :!git add --all<CR>
+map <Leader>gp :!git push<CR>
 " Cargo commands
-map <Leader>cf :!cargo fmt <Enter>
-map <Leader>cc :!cargo check <Enter>
-map <Leader>cr :!cargo run <Enter>
+map <Leader>cf :!cargo fmt<CR>
+map <Leader>cc :!cargo check<CR>
+map <Leader>cl :terminal cargo clippy<CR>
+map <Leader>cr :update<CR>:!cargo run<CR>
 " Haskell commands
-map <Leader>hr :terminal ghci *.hs <Enter>i
+map <Leader>hr :update<CR>:terminal ghci *.hs <CR>i
 
 " Use CTRL-S for saving in all modes
 noremap <C-S> :update<CR>

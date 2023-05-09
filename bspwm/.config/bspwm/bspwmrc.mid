@@ -1,5 +1,8 @@
 #! /bin/sh
 
+feh --bg-fill ~/Pictures/feh/wallpaper_mikael_gustafsson.webp
+#feh --bg-fill ~/Pictures/anime/wallhaven-we52yp.jpg
+
 pidof sxhkd > /dev/null || sxhkd &
 
 #wmname LG3D
@@ -13,11 +16,10 @@ bspc config window_gap           0
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+bspc rule -a polybar sticky=on
 bspc rule -a flal state=floating rectangle=1000x800+460+140
 
-pkill picom
 pkill conky
 pkill polybar
-bspc config top_padding 0
-xsetroot -bg black
+pidof picom > /dev/null || picom &
 pidof fcitx5 > /dev/null || fcitx5 -d &
