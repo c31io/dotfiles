@@ -21,5 +21,6 @@ bspc rule -a flal state=floating rectangle=1000x800+460+140
 
 pkill conky
 pkill polybar
+bspc config top_padding 0
 pidof picom > /dev/null || picom &
 pidof fcitx5 > /dev/null || fcitx5 -d &

@@ -35,12 +35,14 @@ lua require('config.feline')
 lua require('opts')
 
 " Git commands
-map <Leader>gf :!git fetch<CR>
-map <Leader>gs :!git status<CR>
+map <Leader>gf :!gf<CR>
+map <Leader>gst :!gst<CR>
 map <Leader>gl :!gl<CR>
-map <Leader>gc :terminal git commit<CR>ii
-map <Leader>ga :!git add --all<CR>
-map <Leader>gp :!git push<CR>
+map <Leader>gcm :terminal gcm<CR>ii
+map <Leader>ga :!ga<CR>
+map <Leader>gp :!gp<CR>
+map <Leader>gd :terminal gd<CR>i
+map ZA :qa<CR>
 " Cargo commands
 map <Leader>cf :!cargo fmt<CR>
 map <Leader>cc :!cargo check<CR>
