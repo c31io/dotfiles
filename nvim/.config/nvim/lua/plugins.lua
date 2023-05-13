@@ -26,6 +26,10 @@ require('packer').startup(function()
   }
   use {'toppair/peek.nvim', run = 'deno task --quiet build:fast'} -- md preview
   use 'm4xshen/autoclose.nvim' -- Brackets auto closing
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.1', -- Fuzzy finder
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 end)
 
 require('autoclose').setup()

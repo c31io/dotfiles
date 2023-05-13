@@ -8,12 +8,12 @@ set expandtab               " converts tabs to white space
 set hlsearch                " highlight search
 set ignorecase              " case insensitive
 set incsearch               " incremental search
-set mouse=a                 " enable mouse click
-"set mouse=v                 " middle-click paste with
+set mouse=av                " enable mouse click and middle-click paste
 set number                  " add line numbers
-set relativenumber
+set relativenumber          " relative line number
 set showmatch               " show matching
-let tab=4
+set cursorline              " highlight cursor line
+let tab=4                   " 4-space indentation
 let &shiftwidth=tab         " width for autoindents
 let &softtabstop=tab        " so <BS> does the right thing
 let &tabstop=tab            " number of columns occupied by a tab
@@ -22,8 +22,8 @@ syntax on                   " syntax highlighting
 " Lua settings
 lua require('config.nightfox')
 "colorscheme terafox
-"colorscheme nightfox
-colorscheme nordfox
+colorscheme nightfox
+"colorscheme nordfox
 lua require('plugins')
 lua require('config.nvim-tree')
 lua require('config.cmp')
@@ -32,6 +32,7 @@ lua require('config.treesitter')
 lua require('config.dap')
 lua require('config.tabby')
 lua require('config.feline')
+lua require('config.telescope')
 lua require('opts')
 
 " Git commands
@@ -46,7 +47,7 @@ map ZA :qa<CR>
 " Cargo commands
 map <Leader>cf :!cargo fmt<CR>
 map <Leader>cc :!cargo check<CR>
-map <Leader>cl :terminal cargo clippy<CR>
+map <Leader>cl :vsplit term://cargo clippy<CR>
 map <Leader>cr :update<CR>:!cargo run<CR>
 " Haskell commands
 map <Leader>hr :update<CR>:terminal ghci *.hs <CR>i
