@@ -25,12 +25,14 @@ super + F3
 	google-chrome-stable
 super + F4
     solfege
-super + F8
-  feh --bg-fill --randomize ~/Pictures/feh/*
 super + F7
   polybar-msg cmd hide; bspc config top_padding 0
 super + shift + F7
   polybar-msg cmd show; bspc config top_padding 21
+super + F8
+  feh --bg-fill --randomize ~/Pictures/feh/*
+super + F10
+  lock
 Print
   scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
 shift + Print
