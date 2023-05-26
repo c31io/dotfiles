@@ -30,10 +30,18 @@ require('packer').startup(function()
     'nvim-telescope/telescope.nvim', tag = '0.1.1', -- Fuzzy finder
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use {
+    'akinsho/flutter-tools.nvim',
+    requires = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+  }
 end)
 
 require('autoclose').setup()
 require('mason').setup()
+require('flutter-tools').setup()
 
 -- Markdown preview
 require('peek').setup()

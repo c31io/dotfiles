@@ -48,9 +48,12 @@ map ZA :qa<CR>
 map <Leader>cf :!cargo fmt<CR>
 map <Leader>cc :!cargo check<CR>
 map <Leader>cl :vsplit term://cargo clippy<CR>
-map <Leader>cr :update<CR>:!cargo run<CR>
+map <Leader>cr :update<CR>:split term://cargo run<CR>
 " Haskell commands
 map <Leader>hr :update<CR>:terminal ghci *.hs <CR>i
+" Flutter commands
+map <Leader>fr :FlutterRun -d linux<CR>
+map <Leader>fq :FlutterQuit
 
 " Use CTRL-S for saving in all modes
 noremap <C-S> :update<CR>
@@ -59,16 +62,26 @@ inoremap <C-S> <C-O>:update<CR>
 
 " Font settings for neovim-qt
 if exists(':GuiFont')
-  GuiFont FiraCode Nerd Font:h13.5
-  "GuiFont Fira Code:h13.5
-  "GuiFont JetBrains Mono:h13.5
+    GuiFont FiraCode Nerd Font:h13.5
+    "GuiFont Fira Code:h13.5
+    "GuiFont JetBrains Mono:h13.5
 endif
 if exists(':GuiWindowOpacity')
-  GuiWindowOpacity 0.8
+    GuiWindowOpacity 0.8
 endif
 if exists(':GuiRenderLigature')
-  GuiRenderLigature 1
+    GuiRenderLigature 1
 endif
 if exists(':GuiScrollBar')
-  GuiScrollBar 0
+    GuiScrollBar 0
 endif
+
+" Neovide
+if exists("g:neovide")
+    let neovide_transparency = 0.8
+endif
+
+" Disable providers
+let g:loaded_ruby_provider = 0
+let g:loaded_node_provider= 0
+let g:loaded_perl_provider = 0
