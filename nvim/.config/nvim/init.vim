@@ -44,13 +44,17 @@ map <Leader>ga :!ga<CR>
 map <Leader>gp :!gp<CR>
 map <Leader>gd :terminal gd<CR>i
 map ZA :qa<CR>
+
 " Cargo commands
 map <Leader>cf :!cargo fmt<CR>
 map <Leader>cc :!cargo check<CR>
 map <Leader>cl :vsplit term://cargo clippy<CR>
 map <Leader>cr :update<CR>:split term://cargo run<CR>
+command! -nargs=* Cr !cargo run <args>
+
 " Haskell commands
 map <Leader>hr :update<CR>:terminal ghci *.hs <CR>i
+
 " Flutter commands
 map <Leader>fr :FlutterRun -d linux<CR>
 map <Leader>fq :FlutterQuit
