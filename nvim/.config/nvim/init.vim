@@ -2,7 +2,7 @@
 filetype plugin indent on   " allow auto-indenting depending on file type
 filetype plugin on
 set autoindent              " indent a new line
-set cc=81                   " set an 80 column border for good coding style
+"set cc=81                  " set an 80 column border for good coding style
 set clipboard=unnamedplus   " using system clipboard
 set expandtab               " converts tabs to white space
 set hlsearch                " highlight search
@@ -46,7 +46,7 @@ map <Leader>gd :terminal gd<CR>i
 map ZA :qa<CR>
 
 " Cargo commands
-map <Leader>cf :!cargo fmt<CR>
+map <Leader>cf :update<CR>:!cargo fmt<CR>
 map <Leader>cc :!cargo check<CR>
 map <Leader>cl :vsplit term://cargo clippy<CR>
 map <Leader>cr :update<CR>:split term://cargo run<CR>
@@ -64,7 +64,7 @@ noremap <C-S> :update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <C-O>:update<CR>
 
-" Font settings for neovim-qt
+" GUI settings: neovim-qt
 if exists(':GuiFont')
     GuiFont FiraCode Nerd Font:h13.5
     "GuiFont Fira Code:h13.5
@@ -80,12 +80,12 @@ if exists(':GuiScrollBar')
     GuiScrollBar 0
 endif
 
-" Neovide
+" GUI settings: neovide
 if exists("g:neovide")
     let neovide_transparency = 0.8
 endif
 
 " Disable providers
 let g:loaded_ruby_provider = 0
-let g:loaded_node_provider= 0
+let g:loaded_node_provider = 0
 let g:loaded_perl_provider = 0
