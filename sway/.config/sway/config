@@ -15,7 +15,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 bindsym $mod+F1 exec firefox
 bindsym $mod+F2 exec chrome
 bindsym $mod+F3 exec google-chrome-stable
-bindsym $mod+F4 exec neovide
+bindsym $mod+F4 exec kitty
 bindsym $mod+F5 exec zettlr
 bindsym $mod+F6 exec solfege
 bindsym $mod+F7 bar mode toggle
