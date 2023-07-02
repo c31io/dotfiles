@@ -10,13 +10,13 @@ set $down j
 set $up k
 set $right l
 set $term alacritty
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_run
 ### Apps
 bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec chrome
+bindsym $mod+F2 exec google-chrome-stable --proxy-server='socks5://127.0.0.1:7890'
 bindsym $mod+F3 exec google-chrome-stable
 bindsym $mod+F4 exec kitty
-bindsym $mod+F5 exec zettlr
+bindsym $mod+F5 exec https_proxy=127.0.0.1:7890 zettlr
 bindsym $mod+F6 exec solfege
 bindsym $mod+F7 bar mode toggle
 bindsym $mod+F10 exec swaylock -f -c 000000
@@ -24,10 +24,10 @@ bindsym $mod+F10 exec swaylock -f -c 000000
 output * bg ~/Pictures/cat-cult.jpg fill
 output eDP-1 resolution 1920x1080 position 0,0
 ### Idle configuration
-exec swayidle -w \
-    timeout 300 'swaylock -f -c 000000' \
-    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock -f -c 000000'
+#exec swayidle -w \
+#    timeout 300 'swaylock -f -c 000000' \
+#    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#    before-sleep 'swaylock -f -c 000000'
 ### Input configuration
 input "1739:32382:DELL0828:00_06CB:7E7E_Touchpad" {
     tap enabled
@@ -123,7 +123,7 @@ bar {
     mode hide
     position bottom
     #swaybar_command waybar
-    #status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    status_command date +'%Y-%m-%d %I:%M %p'; sleep $((60-$(date +%S))); while date +'%Y-%m-%d %I:%M %p'; do sleep 60; done
     colors {
     #    statusline #ffffff
         background #32323200
