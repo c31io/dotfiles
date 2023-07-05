@@ -20,6 +20,9 @@ bindsym $mod+F5 exec https_proxy=127.0.0.1:7890 zettlr
 bindsym $mod+F6 exec solfege
 bindsym $mod+F7 bar mode toggle
 bindsym $mod+F10 exec swaylock -f -c 000000
+# htop
+for_window [app_id="float"] floating enable
+bindsym $mod+equal exec foot -a float htop
 ### Output configuration
 output * bg ~/Pictures/cat-cult.jpg fill
 output eDP-1 resolution 1920x1080 position 0,0
@@ -112,18 +115,22 @@ bindsym $mod+r mode "resize"
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume+Shift exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym XF86AudioLowerVolume+Shift exec pactl set-sink-volume @DEFAULT_SINK@ -1%
 bindsym XF86AudioPrev exec mpc -q prev
 bindsym XF86AudioPlay exec mpc -q toggle
 bindsym XF86AudioNext exec mpc -q next
 bindsym XF86AudioPause exec mpc -q toggle
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp+Shift exec light -A 1
+bindsym XF86MonBrightnessDown+Shift exec light -U 1
 # Status Bar:
 bar {
     mode hide
     position bottom
     #swaybar_command waybar
-    status_command date +'%Y-%m-%d %I:%M %p'; sleep $((60-$(date +%S))); while date +'%Y-%m-%d %I:%M %p'; do sleep 60; done
+    status_command date +'%Y-%m-%d %H:%M'; sleep $((60-$(date +%S))); while date +'%Y-%m-%d %H:%M'; do sleep 60; done
     colors {
     #    statusline #ffffff
         background #32323200
