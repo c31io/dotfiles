@@ -1,6 +1,6 @@
-## IME
+### IME
 exec_always --no-startup-id pidof fcitx5 > /dev/null || fcitx5 -d &
-## Appearance
+### Appearance
 default_border none
 default_floating_border none
 ### Variables
@@ -20,17 +20,12 @@ bindsym $mod+F5 exec https_proxy=127.0.0.1:7890 zettlr
 bindsym $mod+F6 exec solfege
 bindsym $mod+F7 bar mode toggle
 bindsym $mod+F10 exec swaylock -f -c 000000
-# htop
+### Floating htop
 for_window [app_id="float"] floating enable
 bindsym $mod+equal exec foot -a float htop
 ### Output configuration
-output * bg ~/Pictures/cat-cult.jpg fill
+output * bg ~/Pictures/background/bubble-cat.jpg fill
 output eDP-1 resolution 1920x1080 position 0,0
-### Idle configuration
-#exec swayidle -w \
-#    timeout 300 'swaylock -f -c 000000' \
-#    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#    before-sleep 'swaylock -f -c 000000'
 ### Input configuration
 input "1739:32382:DELL0828:00_06CB:7E7E_Touchpad" {
     tap enabled
@@ -128,13 +123,9 @@ bindsym XF86MonBrightnessDown+Shift exec light -U 1
 # Status Bar:
 bar {
     mode hide
-    position bottom
-    #swaybar_command waybar
     status_command date +'%Y-%m-%d %H:%M'; sleep $((60-$(date +%S))); while date +'%Y-%m-%d %H:%M'; do sleep 60; done
     colors {
-    #    statusline #ffffff
-        background #32323200
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        background #42424242
     }
 }
 include /etc/sway/config.d/*

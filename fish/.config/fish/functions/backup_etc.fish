@@ -1,4 +1,3 @@
-function backup_etc --wraps='sudo rsync -a --delete -quiet /etc /mnt/hdd' --description 'alias backup_etc=sudo rsync -a --delete -quiet /etc /mnt/hdd'
-  sudo rsync -a --delete -quiet /etc /mnt/hdd $argv
-        
+function backup_etc
+  sudo rsync -a --delete --progress /etc /mnt/hdd
 end
