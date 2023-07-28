@@ -64,6 +64,10 @@ noremap <C-S> :update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <C-O>:update<CR>
 
+" Common typos
+command! Q q
+command! W w
+
 " GUI settings: neovim-qt
 if exists(':GuiFont')
     GuiFont FiraCode Nerd Font:h13.5

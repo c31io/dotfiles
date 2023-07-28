@@ -3,6 +3,9 @@ exec_always --no-startup-id pidof fcitx5 > /dev/null || fcitx5 -d &
 ### Appearance
 default_border none
 default_floating_border none
+title_align center
+titlebar_border_thickness 0
+titlebar_padding 0 0
 ### Variables
 set $mod Mod4
 set $left h
@@ -15,23 +18,30 @@ set $menu dmenu_run
 bindsym $mod+F1 exec firefox
 bindsym $mod+F2 exec google-chrome-stable --proxy-server='socks5://127.0.0.1:7890'
 bindsym $mod+F3 exec google-chrome-stable
-bindsym $mod+F4 exec kitty
+bindsym $mod+F4 exec WINIT_UNIX_BACKEND=x11 neovide
 bindsym $mod+F5 exec https_proxy=127.0.0.1:7890 zettlr
 bindsym $mod+F6 exec solfege
 bindsym $mod+F7 bar mode toggle
-bindsym $mod+F10 exec swaylock -f -c 000000
+bindsym $mod+F8 output eDP-1 toggle
+bindsym $mod+F10 exec swaymsg output eDP-1 power toggle && swaymsg output HDMI-A-1 power toggle
 ### Floating htop
 for_window [app_id="float"] floating enable
 bindsym $mod+equal exec foot -a float htop
 ### Output configuration
-output * bg ~/Pictures/background/bubble-cat.jpg fill
-output eDP-1 resolution 1920x1080 position 0,0
+output * bg ~/Pictures/background/zen.jpg fill
+output eDP-1 resolution 1920x1080 position 0,1080
+output HDMI-A-1 resolution 1920x1080 position 0,0
 ### Input configuration
 input "1739:32382:DELL0828:00_06CB:7E7E_Touchpad" {
     tap enabled
     scroll_factor 0.4
     natural_scroll enabled
     middle_emulation enabled
+}
+input "1386:891:Wacom_One_by_Wacom_M_Pen" {
+    # ABS_X 21600 ABS_Y 13500
+    #map_to_output eDP-1
+    map_to_region 0 0 1920 1200
 }
 ### Key bindings
 # Basics:
@@ -41,6 +51,8 @@ input "1739:32382:DELL0828:00_06CB:7E7E_Touchpad" {
     floating_modifier $mod normal
     bindsym $mod+Alt+r reload
     bindsym $mod+Alt+q exec sway exit
+    bindsym $mod+Alt+s exec systemctl suspend
+    bindsym $mod+Alt+p exec systemctl poweroff
 # Moving around:
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
@@ -107,19 +119,19 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 # XF86
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioRaiseVolume+Shift exec pactl set-sink-volume @DEFAULT_SINK@ +1%
-bindsym XF86AudioLowerVolume+Shift exec pactl set-sink-volume @DEFAULT_SINK@ -1%
-bindsym XF86AudioPrev exec mpc -q prev
-bindsym XF86AudioPlay exec mpc -q toggle
-bindsym XF86AudioNext exec mpc -q next
-bindsym XF86AudioPause exec mpc -q toggle
-bindsym XF86MonBrightnessUp exec light -A 5
-bindsym XF86MonBrightnessDown exec light -U 5
-bindsym XF86MonBrightnessUp+Shift exec light -A 1
-bindsym XF86MonBrightnessDown+Shift exec light -U 1
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume+Shift exec pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym --locked XF86AudioLowerVolume+Shift exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym --locked XF86AudioPrev exec mpc -q prev
+bindsym --locked XF86AudioPlay exec mpc -q toggle
+bindsym --locked XF86AudioNext exec mpc -q next
+bindsym --locked XF86AudioPause exec mpc -q toggle
+bindsym --locked XF86MonBrightnessUp exec light -A 5
+bindsym --locked XF86MonBrightnessDown exec light -U 5
+bindsym --locked XF86MonBrightnessUp+Shift exec light -A 1
+bindsym --locked XF86MonBrightnessDown+Shift exec light -U 1
 # Status Bar:
 bar {
     mode hide
