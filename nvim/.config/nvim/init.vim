@@ -41,6 +41,7 @@ map <Leader>gst :!gst<CR>
 map <Leader>gl :!gl<CR>
 map <Leader>gcm :terminal gcm<CR>ii
 map <Leader>ga :!ga<CR>
+map <Leader>gr :!gr<CR>
 map <Leader>gp :!gp<CR>
 map <Leader>gd :terminal gd<CR>i
 map ZA :qa<CR>

@@ -1,5 +1,5 @@
 ### IME
-exec_always --no-startup-id pidof fcitx5 > /dev/null || fcitx5 -d &
+exec_always --no-startup-id fcitx5 -d
 ### Appearance
 default_border none
 default_floating_border none
@@ -13,7 +13,7 @@ set $down j
 set $up k
 set $right l
 set $term alacritty
-set $menu dmenu_run
+set $menu dmenu_run_history
 ### Apps
 bindsym $mod+F1 exec firefox
 bindsym $mod+F2 exec google-chrome-stable --proxy-server='socks5://127.0.0.1:7890'
@@ -22,8 +22,8 @@ bindsym $mod+F4 exec WINIT_UNIX_BACKEND=x11 neovide
 bindsym $mod+F5 exec https_proxy=127.0.0.1:7890 zettlr
 bindsym $mod+F6 exec solfege
 bindsym $mod+F7 bar mode toggle
-bindsym $mod+F8 output eDP-1 toggle
-bindsym $mod+F10 exec swaymsg output eDP-1 power toggle && swaymsg output HDMI-A-1 power toggle
+bindsym --locked $mod+F8 output eDP-1 toggle
+bindsym --locked $mod+F10 exec swaymsg output eDP-1 power toggle && swaymsg output HDMI-A-1 power toggle
 ### Floating htop
 for_window [app_id="float"] floating enable
 bindsym $mod+equal exec foot -a float htop
@@ -81,6 +81,8 @@ input "1386:891:Wacom_One_by_Wacom_M_Pen" {
     bindsym $mod+8 workspace number 8
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 0
+    bindsym $mod+BracketLeft workspace prev
+    bindsym $mod+BracketRight workspace next
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
     bindsym $mod+Shift+3 move container to workspace number 3
@@ -91,6 +93,8 @@ input "1386:891:Wacom_One_by_Wacom_M_Pen" {
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 0
+    bindsym $mod+Shift+BracketLeft move container to workspace prev
+    bindsym $mod+Shift+BracketRight move container to workspace next
 # Layout stuff:
     bindsym $mod+v splith
     bindsym $mod+s splitv
