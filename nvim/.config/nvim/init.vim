@@ -27,7 +27,9 @@ colorscheme nightfox
 lua require('plugins')
 lua require('config.nvim-tree')
 lua require('config.cmp')
+if !&diff
 lua require('config.rust-tools')
+endif
 lua require('config.treesitter')
 lua require('config.dap')
 lua require('config.tabby')

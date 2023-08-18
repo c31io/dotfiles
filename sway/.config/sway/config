@@ -31,6 +31,8 @@ bindsym $mod+equal exec foot -a float htop
 output * bg ~/Pictures/background/zen.jpg fill
 output eDP-1 resolution 1920x1080 position 0,1080
 output HDMI-A-1 resolution 1920x1080 position 0,0
+bindswitch lid:on output eDP-1 disable
+bindswitch lid:off output eDP-1 enable
 ### Input configuration
 input "1739:32382:DELL0828:00_06CB:7E7E_Touchpad" {
     tap enabled
@@ -141,7 +143,15 @@ bar {
     mode hide
     status_command date +'%Y-%m-%d %H:%M'; sleep $((60-$(date +%S))); while date +'%Y-%m-%d %H:%M'; do sleep 60; done
     colors {
-        background #42424242
+        background #88888888
+        statusline #EEEEEEEE
+        separator #EEEEEEEE
+        focused_workspace #00000000 #00000000 #EEEEEEEE
+        active_workspace #CCCCCCCC #CCCCCCCC #EEEEEEEE
+        inactive_workspace #888888CC #888888CC #EEEEEEEE
+        urgent_workspace #EE4444CC #EE4444CC #EEEEEEEE
     }
+    font Architects Daughter Bold 11
+    icon_theme adwaita
 }
 include /etc/sway/config.d/*
