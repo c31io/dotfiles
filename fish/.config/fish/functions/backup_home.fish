@@ -6,23 +6,24 @@ function backup_home
     #   ~/.rustup ~/.cargo ~/.ghcup ~/.npm ~/.yarn ~/.julia
     # discord, chrome, and code abused ~/.config for storage
     rsync -a --delete --progress    \
-    --exclude /home/c31io/.cache    \
-    --exclude /home/c31io/.local    \
-    --include /home/c31io/.local/bin\
-    --exclude /home/c31io/Downloads \
-    --exclude /home/c31io/develop   \
-    --exclude /home/c31io/.rustup   \
-    --exclude /home/c31io/.cargo    \
-    --exclude /home/c31io/.ghcup    \
-    --exclude /home/c31io/.npm      \
-    --exclude /home/c31io/.yarn     \
-    --exclude /home/c31io/.julia    \
-    --exclude /home/c31io/.ipython  \
-    --exclude /home/c31io/.mozilla  \
-    --exclude /home/c31io/.python_history       \
-    --exclude /home/c31io/.config/google-chrome \
-    --exclude /home/c31io/.config/discord       \
-    --exclude /home/c31io/.config/Code\ -\ OSS  \
-    --exclude /home/c31io/.vscode-oss           \
+    --exclude ~/.cache      \
+    --exclude ~/.local      \
+    --include ~/.local/bin  \
+    --exclude ~/Downloads   \
+    --exclude ~/develop     \
+    --exclude ~/.rustup     \
+    --exclude ~/.cargo      \
+    --exclude ~/.ghcup      \
+    --exclude ~/.npm        \
+    --exclude ~/.yarn       \
+    --exclude ~/.julia      \
+    --exclude ~/.ipython    \
+    --exclude ~/.mozilla    \
+    --exclude ~/.config/Zettlr          \
+    --exclude ~/.python_history         \
+    --exclude ~/.config/google-chrome   \
+    --exclude ~/.config/discord         \
+    --exclude ~/.config/Code\ -\ OSS    \
+    --exclude ~/.vscode-oss             \
     /home /mnt/hdd
 end

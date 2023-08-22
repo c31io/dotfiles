@@ -9,6 +9,10 @@ EnumerateSkipFirst=False
 EnumerateGroupForwardKeys=
 # Enumerate Input Method Group Backward
 EnumerateGroupBackwardKeys=
+# Activate Input Method
+ActivateKeys=
+# Deactivate Input Method
+DeactivateKeys=
 
 [Hotkey/TriggerKeys]
 0=Control+Shift+Shift_L
@@ -18,12 +22,6 @@ EnumerateGroupBackwardKeys=
 
 [Hotkey/EnumerateBackwardKeys]
 0=Control+Shift_R
-
-[Hotkey/ActivateKeys]
-0=Escape
-
-[Hotkey/DeactivateKeys]
-0=Hangul_Romaja
 
 [Hotkey/PrevPage]
 0=Up
