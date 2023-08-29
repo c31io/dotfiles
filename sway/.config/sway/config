@@ -141,7 +141,7 @@ bindsym --locked XF86MonBrightnessDown+Shift exec light -U 1
 # Status Bar:
 bar {
     mode hide
-    status_command d(){ date +'%Y-%m-%d %H:%M %A %V ';}; d; sleep $((60-$(date +%S))); while d; do sleep 60; done
+    status_command ~/.config/sway/status_command.sh
     colors {
         background #88888888
         statusline #EEEEEEEE

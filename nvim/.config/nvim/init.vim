@@ -40,7 +40,7 @@ lua require('opts')
 " Git commands
 map <Leader>gf :!gf<CR>
 map <Leader>gst :!gst<CR>
-map <Leader>gl :!gl<CR>
+map <Leader>gl :terminal gl<CR>
 map <Leader>gcm :terminal gcm<CR>ii
 map <Leader>ga :!ga<CR>
 map <Leader>gr :!gr<CR>

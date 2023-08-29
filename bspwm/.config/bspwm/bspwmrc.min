@@ -1,4 +1,5 @@
 #! /bin/sh
+export BSPWM=1
 
 pidof sxhkd > /dev/null || sxhkd &
 

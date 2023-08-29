@@ -26,6 +26,11 @@ require('packer').startup(function()
   }
   use {'toppair/peek.nvim', run = 'deno task --quiet build:fast'} -- md preview
   use 'm4xshen/autoclose.nvim' -- Brackets auto closing
+  use 'airblade/vim-gitgutter' -- Git delta
+  use {
+    'ggandor/leap.nvim', -- Motion
+    requires = { {'tpope/vim-repeat'} }
+  }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1', -- Fuzzy finder
     requires = { {'nvim-lua/plenary.nvim'} }
@@ -42,6 +47,7 @@ end)
 require('autoclose').setup()
 require('mason').setup()
 require('flutter-tools').setup()
+require('leap').add_default_mappings()
 
 -- Markdown preview
 require('peek').setup()

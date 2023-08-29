@@ -9,28 +9,49 @@ function _count_down
     end
 end
 
+function start_music
+    mpc play | lolcat
+end
+
+function pause_music
+    mpc pause | lolcat
+end
+
+function get_workspace
+    if set -q BSPWM
+        echo (bspc query -D -d focused --names)
+    end
+end
+
+function swith_to_workspace
+    if set -q BSPWM
+        bspc desktop -f $argv[1]
+    end
+end
+
 function 5217
-    set this_workspace (bspc query -D -d focused --names)
     while true
+        set this (get_workspace)
         clear
         echo '52 min work' | figlet | lolcat
         if set -q argv[1]
-            mpc pause | lolcat
+            start_music
         end
         echo
         _count_down 52
         sleep 1 # double press C-c to exit
 
-        set that_workspace (bspc query -D -d focused --names)
+        set that (get_workspace)
+        echo $that
         clear
-        bspc desktop -f $this_workspace
+        swith_to_workspace $this
         echo '17 min rest' | figlet | lolcat
         if set -q argv[1]
-            mpc play | lolcat
+            pause_music
         end
         echo
         _count_down 17
         sleep 1 # double press C-c to exit
-        bspc desktop -f $that_workspace
+        swith_to_workspace $that
     end
 end

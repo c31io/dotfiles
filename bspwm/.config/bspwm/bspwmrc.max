@@ -1,8 +1,9 @@
 #! /bin/sh
+export BSPWM=1
 
 #feh --bg-fill ~/Pictures/feh/wallpaper_mikael_gustafsson.webp
 #feh --bg-fill ~/Pictures/anime/wallhaven-we52yp.jpg
-feh --bg-fill ~/Pictures/cat-cult.jpg
+feh --bg-fill ~/Pictures/background/cat-cult.jpg
 
 pidof sxhkd > /dev/null || sxhkd &
 
