@@ -53,6 +53,7 @@ map <Leader>cf :update<CR>:!cargo fmt<CR>
 map <Leader>cc :!cargo check<CR>
 map <Leader>cl :vsplit term://cargo clippy<CR>
 map <Leader>cr :update<CR>:vsplit term://cargo run<CR>
+map <Leader>ct :update<CR>:vsplit term://cargo test<CR>
 command! -nargs=* Cr !cargo run <args>
 
 " Haskell commands
