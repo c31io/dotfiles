@@ -1,3 +1,4 @@
-function vv --wraps=nvim-qt --description 'alias vv=nvim'
-  nvim-qt $argv; 
+function vv
+    cd ~/develop/voxov
+    neovide
 end

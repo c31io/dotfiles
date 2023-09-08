@@ -21,8 +21,8 @@ syntax on                   " syntax highlighting
 
 " Lua settings
 lua require('config.nightfox')
-"colorscheme terafox
-colorscheme nightfox
+colorscheme terafox
+"colorscheme nightfox
 "colorscheme nordfox
 lua require('plugins')
 lua require('config.nvim-tree')
@@ -90,7 +90,8 @@ endif
 
 " GUI settings: neovide
 if exists("g:neovide")
-    let neovide_transparency = 0.8
+    let g:neovide_transparency = 0.8
+    let g:neovide_hide_mouse_when_typing = v:true
 endif
 
 " Disable providers

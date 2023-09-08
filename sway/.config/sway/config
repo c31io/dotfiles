@@ -1,11 +1,5 @@
 ### IME
-exec_always --no-startup-id fcitx5 -d
-### Appearance
-default_border none
-default_floating_border none
-title_align center
-titlebar_border_thickness 0
-titlebar_padding 0 0
+exec --no-startup-id fcitx5 -d
 ### Variables
 set $mod Mod4
 set $left h
@@ -13,7 +7,31 @@ set $down j
 set $up k
 set $right l
 set $term alacritty
-set $menu dmenu_run_history
+set $menu dmenu_run_history -sb "#444444"
+set $font Nothing You Could Do Bold
+set $foreground #DDDDDDCC
+set $background #444444CC
+set $none #00000000
+set $white #EEEEEECC
+set $grey #CCCCCCCC
+set $gray #888888CC 
+set $black #222222CC
+set $red #EE4444CC
+### Appearance
+font $font 12
+default_border none
+default_floating_border none
+title_align center
+titlebar_border_thickness 0
+titlebar_padding 0 0
+client.focused $none $background $white
+client.focused_inactive $none $gray $white
+client.focused_tab_title $none $gray $white
+client.unfocused $none $black $foreground
+client.urgent $none $red $foreground
+### Gesture
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
 ### Apps
 bindsym $mod+F1 exec firefox
 bindsym $mod+F2 exec google-chrome-stable --proxy-server='socks5://127.0.0.1:7890'
@@ -143,15 +161,15 @@ bar {
     mode hide
     status_command ~/.config/sway/status_command.sh
     colors {
-        background #88888888
-        statusline #EEEEEEEE
-        separator #EEEEEEEE
-        focused_workspace #00000000 #00000000 #EEEEEEEE
-        active_workspace #CCCCCCCC #CCCCCCCC #EEEEEEEE
-        inactive_workspace #888888CC #888888CC #EEEEEEEE
-        urgent_workspace #EE4444CC #EE4444CC #EEEEEEEE
+        background $background
+        statusline $foreground
+        separator $foreground
+        focused_workspace $white $white $black
+        active_workspace $grey $grey $foreground
+        inactive_workspace $gray $gray $foreground
+        urgent_workspace $red $red $foreground
     }
-    font Nothing You Could Do Bold
+    font $font
     icon_theme adwaita
 }
 include /etc/sway/config.d/*
