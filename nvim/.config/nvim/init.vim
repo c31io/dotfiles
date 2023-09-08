@@ -38,35 +38,35 @@ lua require('config.telescope')
 lua require('opts')
 
 " Git commands
-map <Leader>gf :!gf<CR>
-map <Leader>gst :!gst<CR>
-map <Leader>gl :terminal gl<CR>
-map <Leader>gcm :terminal gcm<CR>ii
-map <Leader>ga :!ga<CR>
-map <Leader>gr :!gr<CR>
-map <Leader>gp :!gp<CR>
-map <Leader>gd :terminal gd<CR>i
-map ZA :qa<CR>
+noremap <Leader>gf :!gf<CR>
+noremap <Leader>gst :!gst<CR>
+noremap <Leader>gl :terminal gl<CR>
+noremap <Leader>gcm :terminal gcm<CR>ii
+noremap <Leader>ga :!ga<CR>
+noremap <Leader>gr :!gr<CR>
+noremap <Leader>gp :!gp<CR>
+noremap <Leader>gd :terminal gd<CR>i
+noremap ZA :qa<CR>
 
 " Cargo commands
-map <Leader>cf :update<CR>:!cargo fmt<CR>
-map <Leader>cc :!cargo check<CR>
-map <Leader>cl :vsplit term://cargo clippy<CR>
-map <Leader>cr :update<CR>:vsplit term://cargo run<CR>
-map <Leader>ct :update<CR>:vsplit term://cargo test<CR>
+noremap <Leader>cf :update<CR>:!cargo fmt<CR>
+noremap <Leader>cc :!cargo check<CR>
+noremap <Leader>cl :vsplit term://cargo clippy<CR>
+noremap <Leader>cr :update<CR>:vsplit term://cargo run<CR>
+noremap <Leader>ct :update<CR>:vsplit term://cargo test<CR>
 command! -nargs=* Cr !cargo run <args>
 
 " Haskell commands
-map <Leader>hr :update<CR>:terminal ghci *.hs <CR>i
+noremap <Leader>hr :update<CR>:terminal ghci *.hs <CR>i
 
 " Flutter commands
-map <Leader>fr :FlutterRun -d linux<CR>
-map <Leader>fq :FlutterQuit
+noremap <Leader>fr :FlutterRun -d linux<CR>
+noremap <Leader>fq :FlutterQuit
 
 " Use CTRL-S for saving in all modes
 noremap <C-S> :update<CR>
-vnoremap <C-S> <C-C>:update<CR>
-inoremap <C-S> <C-O>:update<CR>
+vnoremap <C-S> <C-C>:update<CR><Esc>
+inoremap <C-S> <C-O>:update<CR><Esc>
 
 " Common typos
 command! Q q
