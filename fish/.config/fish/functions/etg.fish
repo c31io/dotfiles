@@ -1,4 +1,3 @@
-function etg --wraps='exa -T --git-ignore' --description 'alias etg=exa -T --git-ignore'
-  exa -T --git-ignore $argv
-        
+function etg --wraps='eza -T --git-ignore' --description 'alias etg=eza -T --git-ignore'
+  eza -T --git-ignore $argv
 end

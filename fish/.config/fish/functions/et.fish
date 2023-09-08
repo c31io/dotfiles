@@ -1,4 +1,3 @@
-function et --wraps='exa -T' --description 'alias et=exa -T'
-  exa -T $argv
-        
+function et --wraps='eza -T' --description 'alias et=eza -T'
+  eza -T $argv
 end

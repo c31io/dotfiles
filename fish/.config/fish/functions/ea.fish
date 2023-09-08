@@ -1,4 +1,3 @@
-function ea --wraps='exa -a' --description 'alias ea=exa -a'
-  exa -a $argv
-        
+function ea --wraps='eza -a' --description 'alias ea=eza -a'
+  eza -a $argv
 end

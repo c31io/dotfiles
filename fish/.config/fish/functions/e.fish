@@ -1,4 +1,3 @@
-function e --wraps=exa --description 'alias e=exa'
-  exa $argv
-        
+function e --wraps=eza --description 'alias e=eza'
+  eza $argv
 end
