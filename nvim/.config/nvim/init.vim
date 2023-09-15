@@ -1,6 +1,7 @@
 " Native settings
 filetype plugin indent on   " allow auto-indenting depending on file type
-filetype plugin on
+filetype plugin on          " run file type plugins
+set shm+=I                  " hide intro message
 set autoindent              " indent a new line
 "set cc=81                  " set an 80 column border for good coding style
 set clipboard=unnamedplus   " using system clipboard

@@ -158,8 +158,6 @@ bindsym --locked XF86MonBrightnessUp+Shift exec light -A 1
 bindsym --locked XF86MonBrightnessDown+Shift exec light -U 1
 # Status Bar:
 bar {
-    mode hide
-    status_command ~/.config/sway/status_command.sh
     colors {
         background $background
         statusline $foreground
@@ -169,7 +167,10 @@ bar {
         inactive_workspace $gray $gray $foreground
         urgent_workspace $red $red $foreground
     }
-    font $font
-    icon_theme adwaita
+    font $font 17
+    height 33
+    icon_theme Papirus
+    mode hide
+    status_command ~/.config/sway/status_command.sh
 }
 include /etc/sway/config.d/*

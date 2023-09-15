@@ -19,10 +19,11 @@ function backup_home
     --exclude ~/.julia      \
     --exclude ~/.ipython    \
     --exclude ~/.mozilla    \
-    --exclude ~/.config/Zettlr          \
     --exclude ~/.python_history         \
+    --exclude ~/.config/Zettlr          \
     --exclude ~/.config/google-chrome   \
     --exclude ~/.config/discord         \
+    --exclude ~/.config/Element         \
     --exclude ~/.config/Code\ -\ OSS    \
     --exclude ~/.vscode-oss             \
     /home /mnt/hdd
