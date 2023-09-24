@@ -42,11 +42,12 @@ bindsym $mod+F6 exec solfege
 bindsym $mod+F7 bar mode toggle
 bindsym --locked $mod+F8 output eDP-1 toggle
 bindsym --locked $mod+F10 exec swaymsg output eDP-1 power toggle && swaymsg output HDMI-A-1 power toggle
-### Floating htop
+### Floating term
 for_window [app_id="float"] floating enable
 bindsym $mod+equal exec foot -a float htop
+bindsym $mod+Shift+Return exec $term --class float
 ### Output configuration
-output * bg ~/Pictures/background/zen.jpg fill
+output * bg ~/.bg fill
 output eDP-1 resolution 1920x1080 position 0,1080
 output HDMI-A-1 resolution 1920x1080 position 0,0
 bindswitch lid:on output eDP-1 disable
@@ -121,8 +122,7 @@ input "1386:891:Wacom_One_by_Wacom_M_Pen" {
     bindsym $mod+Shift+m layout stacking
     bindsym $mod+m layout tabbed
     bindsym $mod+t layout toggle split
-    bindsym $mod+f fullscreen
-    bindsym $mod+Shift+Return floating toggle
+    bindsym $mod+f floating toggle
     bindsym $mod+Tab focus mode_toggle
     bindsym $mod+p focus parent
 # Scratchpad:
@@ -143,7 +143,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 # XF86
-bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send $(pactl get-sink-mute @DEFAULT_SINK@) -t 1000
 bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym --locked XF86AudioRaiseVolume+Shift exec pactl set-sink-volume @DEFAULT_SINK@ +1%
@@ -156,6 +156,8 @@ bindsym --locked XF86MonBrightnessUp exec light -A 5
 bindsym --locked XF86MonBrightnessDown exec light -U 5
 bindsym --locked XF86MonBrightnessUp+Shift exec light -A 1
 bindsym --locked XF86MonBrightnessDown+Shift exec light -U 1
+# Status Notification
+bindsym $mod+c exec notify-send $(cat /sys/class/power_supply/BAT0/capacity) -t 1000
 # Status Bar:
 bar {
     colors {

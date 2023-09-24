@@ -1,26 +1,5 @@
--- Feline
+-- Origin file
 -- https://github.com/EdenEast/nightfox.nvim/blob/main/mics/feline.lua
---
--- This file is a complete example of creating the feline configuration shown in the readme of
--- nightfox. This configuration generates its own highlight groups from the currently applied
--- colorscheme. These highlight groups are regenreated on colorscheme changes.
---
--- Required plugins:
---    - `feline-nvim/feline.nvim`
---    - `kyazdani42/nvim-web-devicons`
---
--- This file is required to be in your `lua` folder of your config.  Your colorscheme should also
--- be applied before this file is sourced. This file cannot be located `lua/feline.lua` as this
--- would clash with the actual plugin require path.
---
--- # Example:
---
--- ```lua
--- vim.cmd("colorscheme nightfox")
--- require('user.ui.feline')
--- ```
---
--- This assumes that this file is located at `lua/user/ui/feline.lua`
 
 local fmt = string.format
 
@@ -249,10 +228,8 @@ local icons = {
   mathematical_L = "𝑳",
   vertical_bar = "┃",
   vertical_bar_thin = "│",
-  left = "",
   right = "",
   block = "",
-  left_filled = "",
   right_filled = "",
   slant_left = "",
   slant_left_thin = "",
@@ -314,7 +291,6 @@ local c = {
       return fmt(" %s ", vi.text[vim.fn.mode()])
     end,
     hl = vi_mode_hl,
-    --right_sep = { str = " ", hl = vi_sep_hl },
   },
   gitbranch = {
     provider = "git_branch",
@@ -327,9 +303,11 @@ local c = {
   },
   file_type = {
     provider = function()
-      return fmt(" %s ", vim.bo.filetype:upper())
+      return fmt("%s", vim.bo.filetype:upper())
     end,
     hl = "UserSLAlt",
+    left_sep = { str = " ", hl = "UserSLAltSep" },
+    right_sep = { str = " ", hl = "UserSLAltSep" },
   },
   fileinfo = {
     provider = { name = "file_info", opts = { type = "relative" } },
@@ -343,62 +321,52 @@ local c = {
       return fmt(" %s %s ", os, vim.bo.fileencoding)
     end,
     hl = "StatusLine",
-    left_sep = { str = icons.left_filled, hl = "UserSLAltSep" },
   },
   cur_position = {
     provider = function()
-      -- TODO: What about 4+ diget line numbers?
-      return fmt(" %3d:%-2d ", unpack(vim.api.nvim_win_get_cursor(0)))
+      return fmt(" %d:%d ", unpack(vim.api.nvim_win_get_cursor(0)))
     end,
     hl = vi_mode_hl,
-    left_sep = { str = icons.left_filled, hl = vi_sep_hl },
   },
   cur_percent = {
     provider = function()
-      return " " .. require("feline.providers.cursor").line_percentage() .. "  "
+      return require("feline.providers.cursor").line_percentage() .. " "
     end,
     hl = vi_mode_hl,
-    left_sep = { str = icons.left, hl = vi_mode_hl },
   },
-  default = { -- needed to pass the parent StatusLine hl group to right hand side
+  default = {
     provider = "",
     hl = "StatusLine",
   },
   lsp_status = {
     provider = function()
-      return vim.tbl_count(vim.lsp.buf_get_clients(0)) == 0 and "" or "◦"
+      return vim.tbl_count(vim.lsp.buf_get_clients(0)) == 0 and "" or "ℓ"
     end,
     hl = "UserSLStatus",
-    left_sep = { str = "", hl = "UserSLStatusBg", always_visible = true },
-    right_sep = { str = "", hl = "UserSLErrorStatus", always_visible = true },
   },
   lsp_error = {
     provider = function()
       return get_diag("ERROR")
     end,
     hl = "UserSLError",
-    right_sep = { str = "", hl = "UserSLWarnError", always_visible = true },
   },
   lsp_warn = {
     provider = function()
       return get_diag("WARN")
     end,
     hl = "UserSLWarn",
-    right_sep = { str = "", hl = "UserSLInfoWarn", always_visible = true },
   },
   lsp_info = {
     provider = function()
       return get_diag("INFO")
     end,
     hl = "UserSLInfo",
-    right_sep = { str = "", hl = "UserSLHintInfo", always_visible = true },
   },
   lsp_hint = {
     provider = function()
       return get_diag("HINT")
     end,
     hl = "UserSLHint",
-    right_sep = { str = "", hl = "UserSLFtHint", always_visible = true },
   },
   in_fileinfo = {
     provider = "file_info",

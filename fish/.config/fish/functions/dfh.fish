@@ -1,3 +1,3 @@
-function dfh --wraps='df -h' --description 'alias dfh=df -h'
-  df -h $argv; 
+function dfh
+  df -h -x tmpfs -x devtmpfs -x efivarfs $argv; 
 end

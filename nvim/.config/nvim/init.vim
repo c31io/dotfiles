@@ -47,7 +47,6 @@ noremap <Leader>ga :!ga<CR>
 noremap <Leader>gr :!gr<CR>
 noremap <Leader>gp :!gp<CR>
 noremap <Leader>gd :terminal gd<CR>i
-noremap ZA :qa<CR>
 
 " Cargo commands
 noremap <Leader>cf :update<CR>:!cargo fmt<CR>
@@ -68,6 +67,9 @@ noremap <Leader>fq :FlutterQuit
 noremap <C-S> :update<CR>
 vnoremap <C-S> <C-C>:update<CR><Esc>
 inoremap <C-S> <C-O>:update<CR><Esc>
+
+" Close all, useful in diff
+noremap ZA :qa<CR>
 
 " Common typos
 command! Q q
