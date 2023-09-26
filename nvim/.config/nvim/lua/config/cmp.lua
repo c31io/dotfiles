@@ -3,7 +3,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require 'lspconfig' 
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'rust_analyzer', 'clangd', 'pyright', 'gopls', 'hls' }
+local servers = { 'rust_analyzer', 'clangd', 'pyright', 'gopls', 'bashls'}
 if vim.opt.diff:get() then
     servers = {}
 end

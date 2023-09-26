@@ -46,6 +46,7 @@ end)
 
 require('autoclose').setup()
 require('mason').setup()
+require('mason-lspconfig').setup()
 require('flutter-tools').setup()
 require('leap').add_default_mappings()
 
