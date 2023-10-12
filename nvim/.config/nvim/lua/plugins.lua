@@ -6,12 +6,14 @@ require('packer').startup(function()
   use 'neovim/nvim-lspconfig' -- Configurations for nvim LSP
   use 'simrat39/rust-tools.nvim' -- Rust auto setup
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp' -- LSP sources for nvim-cmp BEGIN
+  -- LSP sources for nvim-cmp BEGIN
+  use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-buffer' -- LSP sources for nvim-cmp END
+  use 'hrsh7th/cmp-buffer'
+  -- LSP sources for nvim-cmp END
   use 'hrsh7th/vim-vsnip' -- LSP snippet
   use 'EdenEast/nightfox.nvim' -- Nightfox theme
   use 'feline-nvim/feline.nvim' -- Status line
@@ -24,7 +26,7 @@ require('packer').startup(function()
       'nvim-tree/nvim-web-devicons',
     },
   }
-  use {'toppair/peek.nvim', run = 'deno task --quiet build:fast'} -- md preview
+  use {'toppair/peek.nvim', run = 'deno task --quiet build:fast'} -- .md preview
   use 'm4xshen/autoclose.nvim' -- Brackets auto closing
   use 'airblade/vim-gitgutter' -- Git delta
   use {
@@ -39,7 +41,7 @@ require('packer').startup(function()
     'akinsho/flutter-tools.nvim',
     requires = {
         'nvim-lua/plenary.nvim',
-        'stevearc/dressing.nvim', -- optional for vim.ui.select
+        'stevearc/dressing.nvim', -- Optional for vim.ui.select
     },
   }
 end)

@@ -33,6 +33,7 @@ client.urgent $none $red $foreground
 bindgesture swipe:right workspace prev
 bindgesture swipe:left workspace next
 ### Apps
+bindsym $mod+q exec qbittorrent
 bindsym $mod+F1 exec firefox
 bindsym $mod+F2 exec google-chrome-stable --gtk-version=4 --proxy-server='socks5://127.0.0.1:7890'
 bindsym $mod+F3 exec google-chrome-stable --gtk-version=4
@@ -160,6 +161,7 @@ bindsym --locked XF86MonBrightnessUp+Shift exec light -A 1 && $mpc
 bindsym --locked XF86MonBrightnessDown+Shift exec light -U 1 && $mpc
 # Status Notification
 bindsym $mod+c exec notify-send "BAT0 $(cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status)" -t 1000
+bindsym $mod+i exec notify-send "$(iwctl station wlan0 show | rg network | awk '{print substr($0,index($0,$3))}' | awk '{$1=$1};1')" -t 1000
 # Status Bar:
 bar {
     colors {
