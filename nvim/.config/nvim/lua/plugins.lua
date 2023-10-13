@@ -34,7 +34,7 @@ require('packer').startup(function()
     requires = { {'tpope/vim-repeat'} }
   }
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1', -- Fuzzy finder
+    'nvim-telescope/telescope.nvim', -- Fuzzy finder
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {
