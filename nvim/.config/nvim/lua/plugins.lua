@@ -1,50 +1,70 @@
-local use = require('packer').use
-require('packer').startup(function()
-  use 'wbthomason/packer.nvim' -- Package manager
-  use 'williamboman/mason.nvim' -- LSP manager
-  use 'williamboman/mason-lspconfig.nvim' -- Configuration manager
-  use 'neovim/nvim-lspconfig' -- Configurations for nvim LSP
-  use 'simrat39/rust-tools.nvim' -- Rust auto setup
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  -- LSP sources for nvim-cmp BEGIN
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-nvim-lua'
-  use 'hrsh7th/cmp-nvim-lsp-signature-help'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-buffer'
-  -- LSP sources for nvim-cmp END
-  use 'hrsh7th/vim-vsnip' -- LSP snippet
-  use 'EdenEast/nightfox.nvim' -- Nightfox theme
-  use 'feline-nvim/feline.nvim' -- Status line
-  use 'nanozuki/tabby.nvim' -- Tab
-  use 'nvim-treesitter/nvim-treesitter' -- Code folding
-  use 'mfussenegger/nvim-dap' -- Debug adapter protocol
-  use {
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require('lazy').setup({
+  'williamboman/mason.nvim', -- LSP manager
+  'williamboman/mason-lspconfig.nvim', -- Configuration manager
+  'neovim/nvim-lspconfig', -- Configurations for nvim LSP
+  'simrat39/rust-tools.nvim', -- Rust auto setup
+  {
+    'hrsh7th/nvim-cmp', -- Autocompletion plugin
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
+    }
+  },
+  'hrsh7th/vim-vsnip', -- LSP snippet
+  {
+    'EdenEast/nightfox.nvim', -- Nightfox theme
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme terafox]])
+    end,
+  },
+  'feline-nvim/feline.nvim', -- Status line
+  'nanozuki/tabby.nvim', -- Tab
+  'nvim-treesitter/nvim-treesitter', -- Code folding
+  'mfussenegger/nvim-dap', -- Debug adapter protocol
+  {
     'nvim-tree/nvim-tree.lua', -- File tree
-    requires = {
+    dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
-  }
-  use {'toppair/peek.nvim', run = 'deno task --quiet build:fast'} -- .md preview
-  use 'm4xshen/autoclose.nvim' -- Brackets auto closing
-  use 'airblade/vim-gitgutter' -- Git delta
-  use {
+  },
+  {'toppair/peek.nvim', build = 'deno task --quiet build:fast'}, -- .md preview
+  'm4xshen/autoclose.nvim', -- Brackets auto closing
+  'airblade/vim-gitgutter', -- Git delta
+  {
     'ggandor/leap.nvim', -- Motion
-    requires = { {'tpope/vim-repeat'} }
-  }
-  use {
+    dependencies = { {'tpope/vim-repeat'} }
+  },
+  {
     'nvim-telescope/telescope.nvim', -- Fuzzy finder
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  use {
+    dependencies = { {'nvim-lua/plenary.nvim'} }
+  },
+  {
     'akinsho/flutter-tools.nvim',
-    requires = {
+    dependencies = {
         'nvim-lua/plenary.nvim',
         'stevearc/dressing.nvim', -- Optional for vim.ui.select
     },
-  }
-end)
+  },
+})
 
 require('autoclose').setup()
 require('mason').setup()

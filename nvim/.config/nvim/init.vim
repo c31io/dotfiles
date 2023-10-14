@@ -21,10 +21,6 @@ let &tabstop=tab            " number of columns occupied by a tab
 syntax on                   " syntax highlighting
 
 " Lua settings
-lua require('config.nightfox')
-colorscheme terafox
-"colorscheme nightfox
-"colorscheme nordfox
 lua require('plugins')
 lua require('config.nvim-tree')
 lua require('config.cmp')
@@ -78,8 +74,6 @@ command! W w
 " GUI settings: neovim-qt
 if exists(':GuiFont')
     GuiFont FiraCode Nerd Font:h13.5
-    "GuiFont Fira Code:h13.5
-    "GuiFont JetBrains Mono:h13.5
 endif
 if exists(':GuiWindowOpacity')
     GuiWindowOpacity 0.8
