@@ -12,6 +12,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  {
+    'LazyVim/LazyVim',
+    opts = { 
+        colorscheme = 'terafox',
+        news = { lazyvim = false },
+    },
+  },
+  {
+    'EdenEast/nightfox.nvim', -- Nightfox theme
+    opts = { options = { transparent = true } },
+  },
   'williamboman/mason.nvim', -- LSP manager
   'williamboman/mason-lspconfig.nvim', -- Configuration manager
   'neovim/nvim-lspconfig', -- Configurations for nvim LSP
@@ -28,14 +39,6 @@ require('lazy').setup({
     }
   },
   'hrsh7th/vim-vsnip', -- LSP snippet
-  {
-    'EdenEast/nightfox.nvim', -- Nightfox theme
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme terafox]])
-    end,
-  },
   'feline-nvim/feline.nvim', -- Status line
   'nanozuki/tabby.nvim', -- Tab
   'nvim-treesitter/nvim-treesitter', -- Code folding
