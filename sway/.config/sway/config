@@ -146,6 +146,7 @@ bindsym $mod+r mode "resize"
 # XF86
 set $volume notify-send -t 1000 "$(pactl list sinks | rg "Mute|Volume|Active Port" | awk 'FNR==1{print $1$2}FNR==2{print $1$5}FNR==4{print $3}')"
 set $mpc notify-send -t 1000 "$(mpc)"
+set $light v=$(light) && notify-send -t 1000 "${v%.*}"
 bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && $volume
 bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && $volume
 bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && $volume
@@ -155,10 +156,10 @@ bindsym --locked XF86AudioPrev exec mpc -q prev && $mpc
 bindsym --locked XF86AudioPlay exec mpc -q toggle && $mpc
 bindsym --locked XF86AudioNext exec mpc -q next && $mpc
 bindsym --locked XF86AudioPause exec mpc -q toggle && $mpc
-bindsym --locked XF86MonBrightnessUp exec light -A 5 && $mpc
-bindsym --locked XF86MonBrightnessDown exec light -U 5 && $mpc
-bindsym --locked XF86MonBrightnessUp+Shift exec light -A 1 && $mpc
-bindsym --locked XF86MonBrightnessDown+Shift exec light -U 1 && $mpc
+bindsym --locked XF86MonBrightnessUp exec light -A 5 && $light
+bindsym --locked XF86MonBrightnessDown exec light -U 5 && $light
+bindsym --locked XF86MonBrightnessUp+Shift exec light -A 1 && $light
+bindsym --locked XF86MonBrightnessDown+Shift exec light -U 1 && $light
 # Status Notification
 bindsym $mod+c exec notify-send "BAT0 $(cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status)" -t 1000
 bindsym $mod+i exec notify-send "$(iwctl station wlan0 show | rg network | awk '{print substr($0,index($0,$3))}' | awk '{$1=$1};1')" -t 1000
