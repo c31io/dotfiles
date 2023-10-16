@@ -1,44 +1,14 @@
--- Tabby
+-- Original file
 -- https://github.com/UserEast/nightfox.nvim/tree/main/mics/tabby.lua
---
--- This file is a complete example of creating the tabby configuration shown in the readme of
--- nightfox. This configuration generates its own highlight groups from the currently applied
--- colorscheme. These highlight groups are regenreated on colorscheme changes.
---
--- Required plugins:
---    - `nanozuki/tabby.nvim`
---
--- This file is required to be in your `lua` folder of your config.  Your colorscheme should also
--- be applied before this file is sourced. This file cannot be located `lua/tabby.lua` as this
--- would clash with the actual plugin require path.
---
---
--- # Example:
---
--- ```lua
--- vim.cmd("colorscheme nightfox")
--- require('user.ui.tabby')
--- ```
---
--- This assumes that this file is located at `lua/user/ui/tabby.lua`
 
 local fmt = string.format
 
-----------------------------------------------------------------------------------------------------
--- Colors
-
----Convert color number to hex string
----@param n number
----@return string
 local hex = function(n)
   if n then
     return fmt("#%06x", n)
   end
 end
 
----Parse `style` string into nvim_set_hl options
----@param style string
----@return table
 local function parse_style(style)
   if not style or style == "NONE" then
     return {}
@@ -52,9 +22,6 @@ local function parse_style(style)
   return result
 end
 
----Get highlight opts for a given highlight group name
----@param name string
----@return table
 local function get_highlight(name)
   local hl = vim.api.nvim_get_hl_by_name(name, true)
   if hl.link then
@@ -69,18 +36,13 @@ local function get_highlight(name)
   return result
 end
 
----Set highlight group from provided table
----@param groups table
 local function set_highlights(groups)
   for group, opts in pairs(groups) do
     vim.api.nvim_set_hl(0, group, opts)
   end
 end
 
----Generate a color palette from the current applied colorscheme
----@return table
 local function generate_pallet_from_colorscheme()
-  -- stylua: ignore
   local color_map = {
     black   = { index = 0, default = "#393b44" },
     red     = { index = 1, default = "#c94f6d" },
@@ -106,14 +68,9 @@ local function generate_pallet_from_colorscheme()
   return pallet
 end
 
----Generate user highlight groups based on the curent applied colorscheme
----
----NOTE: This is a global because I dont known where this file will be in your config
----and it is needed for the autocmd below
 _G._genreate_user_tabline_highlights = function()
   local pal = generate_pallet_from_colorscheme()
 
-  -- stylua: ignore
   local sl_colors = {
     Black   = { fg = pal.black,   bg = pal.white },
     Red     = { fg = pal.red,     bg = pal.sl.bg },
@@ -132,7 +89,6 @@ _G._genreate_user_tabline_highlights = function()
   end
 
   local groups = {
-    -- tabline
     UserTLHead = { fg = pal.fill.bg, bg = pal.cyan },
     UserTLHeadSep = { fg = pal.cyan, bg = pal.fill.bg },
     UserTLActive = { fg = pal.sel.fg, bg = pal.sel.bg, bold = true },
@@ -153,27 +109,13 @@ vim.api.nvim_create_autocmd({ "SessionLoadPost", "ColorScheme" }, {
   end,
 })
 
-----------------------------------------------------------------------------------------------------
--- Feline
-
 local filename = require("tabby.filename")
---[[
-local cwd = function()
-  -- return "  " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " "
-  return " " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " "
-end
---]]
 local line = {
   hl = "TabLineFill",
   layout = "active_wins_at_tail",
-  --head = {
-  --  { cwd, hl = "UserTLHead" },
-  --  { "", hl = "UserTLHeadSep" },
-  --},
   active_tab = {
     label = function(tabid)
       return {
-        --"  " .. tabid .. " ",
         " " .. tabid .. " ",
         hl = "UserTLActive",
       }
@@ -184,7 +126,6 @@ local line = {
   inactive_tab = {
     label = function(tabid)
       return {
-        --"  " .. tabid .. " ",
         " " .. tabid .. " ",
         hl = "UserTLBoldLine",
       }
@@ -212,10 +153,6 @@ local line = {
     left_sep = { "", hl = "UserTLLineSep" },
     right_sep = { "", hl = "UserTLLineSep" },
   },
-  --tail = {
-  --  { "", hl = "UserTLHeadSep" },
-  --  { "  ", hl = "UserTLHead" },
-  --},
 }
 
 require("tabby").setup({
@@ -232,13 +169,3 @@ vim.api.nvim_set_keymap("n", "<leader>tp", ":tabp<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
 -- move current tab to next position
 vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
-
---[[
-gt					*i_CTRL-<PageDown>* *i_<C-PageDown>*
-		Go to the next tab page.  Wraps around from the last to the
-		first one.
-{count}gt	Go to tab page {count}.  The first tab page has number one.
-g<Tab>		Go to previous (last accessed) tab page.
-gT		Go to the previous tab page.  Wraps around from the first one
-		to the last one.
---]]
