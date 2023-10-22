@@ -19,6 +19,7 @@ function backup_home
     --exclude ~/.julia      \
     --exclude ~/.ipython    \
     --exclude ~/.mozilla    \
+    --exclude ~/.sway_log   \
     --exclude ~/.python_history         \
     --exclude ~/.config/Zettlr          \
     --exclude ~/.config/google-chrome   \
