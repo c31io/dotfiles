@@ -1,0 +1,27 @@
+[http]
+	proxy = http://127.0.0.1:7890
+
+[user]
+	email = celiogrand@outlook.com
+	name = Celio Grand
+
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
+
+[core]
+	editor = nvim --clean --
+
+[diff]
+    tool = nvimdiff
+
+[difftool "nvimdiff"]
+    cmd = nvim --noplugin -d \"$LOCAL\" \"$REMOTE\"
+
+[merge]
+	tool = nvimdiff
+
+[mergetool "nvimdiff"]
+	cmd = nvim --noplugin -d \"$LOCAL\" \"$MERGED\" \"$BASE\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd J\"
