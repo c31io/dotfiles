@@ -13,15 +13,11 @@ o.shiftwidth = 4
 o.tabstop = 4
 o.softtabstop = 4
 
--- Line number
-o.number = true
-o.relativenumber = true
+-- Always show signcolumn
+o.signcolumn = "yes"
 
 -- Highlight cursor line
 o.cursorline = true
-
--- Diagnostics column
-o.signcolumn = "number"
 
 -- Case insensitive
 o.ignorecase = true
@@ -82,15 +78,5 @@ g.loaded_perl_provider = 0
 
 -- Appearance
 vim.diagnostic.config {
-    virtual_text = false,
-    signs = true,
-    update_in_insert = true,
-    underline = true,
-    severity_sort = false,
-    float = {
-        border = 'none',
-        source = 'always',
-        header = '',
-        prefix = '',
-    },
+    severity_sort = true,
 }

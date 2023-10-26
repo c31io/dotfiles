@@ -23,7 +23,7 @@ return {
     {
         'toppair/peek.nvim', -- .md preview
         lazy = true,
-        ft = 'md',
+        ft = 'markdown',
         build = 'deno task --quiet build:fast',
         config = function()
             require('peek').setup()

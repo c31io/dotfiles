@@ -1,22 +1,31 @@
--- Add additional capabilities supported by nvim-cmp
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require 'lspconfig'
+local capabilities = require'cmp_nvim_lsp'.default_capabilities()
 
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'rust_analyzer', 'clangd', 'pyright', 'gopls', 'bashls', 'zls' }
+lspconfig.lua_ls.setup {
+    settings = {
+        Lua = {
+            diagnostics = { globals = { 'vim' } }
+        }
+    },
+    capabilities = capabilities,
+}
 
-if vim.opt.diff:get() then
-    servers = {}
-else
-    lspconfig.lua_ls.setup {
-        settings = {
-            Lua = {
-                diagnostics = { globals = { 'vim' } }
+lspconfig.rust_analyzer.setup {
+    settings = {
+        ["rust-analyzer"] = {
+            cargo = {
+                extraEnv = { CARGO_PROFILE_RUST_ANALYZER_INHERITS = 'dev' },
+                extraArgs = { '--profile', 'rust-analyzer' },
+            },
+            diagnostics = {
+                disabled = { 'inactive-code' }
             }
-        },
-        capabilities = capabilities,
-    }
-end
+        }
+    },
+    capabilities = capabilities,
+}
+
+local servers = { 'clangd', 'pyright', 'gopls', 'bashls', 'zls' }
 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
@@ -85,13 +94,13 @@ cmp.setup({
     },
     -- Installed sources:
     sources = {
-        { name = 'path' },                     -- file paths
+        { name = 'path' },                                       -- file paths
         { name = 'nvim_lsp',               keyword_length = 3 }, -- from language server
-        { name = 'nvim_lsp_signature_help' },  -- display function signatures with current parameter emphasized
+        { name = 'nvim_lsp_signature_help' },                    -- display function signatures with current parameter emphasized
         { name = 'nvim_lua',               keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
         { name = 'buffer',                 keyword_length = 2 }, -- source current buffer
         { name = 'vsnip',                  keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
-        { name = 'calc' },                     -- source for math calculation
+        { name = 'calc' },                                       -- source for math calculation
     },
     formatting = {
         fields = { 'menu', 'abbr', 'kind' },
