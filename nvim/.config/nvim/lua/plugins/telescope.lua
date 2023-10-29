@@ -1,11 +1,11 @@
 return {
     {
-        'nvim-telescope/telescope.nvim', -- Fuzzy finder
+        'nvim-telescope/telescope.nvim',
         lazy = true,
         event = 'VeryLazy',
         dependencies = { { 'nvim-lua/plenary.nvim' } },
         config = function()
-            local builtin = require('telescope.builtin')
+            local builtin = require 'telescope.builtin'
             vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
             vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
             vim.keymap.set('n', '<leader>fb', builtin.buffers, {})

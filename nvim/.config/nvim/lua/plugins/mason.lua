@@ -1,17 +1,18 @@
 return {
     {
-        'williamboman/mason.nvim', -- LSP manager
+        'williamboman/mason.nvim',
         lazy = false,
         config = function()
-            require('mason').setup()
+            require 'mason'.setup()
         end
     },
+
     {
-        'williamboman/mason-lspconfig.nvim', -- Configuration manager
+        'williamboman/mason-lspconfig.nvim',
         lazy = true,
         event = 'VeryLazy',
         config = function()
-            require('mason-lspconfig').setup()
+            require 'mason-lspconfig'.setup()
         end
     },
 }

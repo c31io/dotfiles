@@ -1,6 +1,6 @@
 return {
     {
-        'hrsh7th/nvim-cmp', -- Autocompletion plugin
+        'hrsh7th/nvim-cmp',
         lazy = true,
         event = "VeryLazy",
         dependencies = {

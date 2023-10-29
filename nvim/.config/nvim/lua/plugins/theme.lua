@@ -1,24 +1,26 @@
 return {
     {
-        'EdenEast/nightfox.nvim', -- Nightfox theme
+        'EdenEast/nightfox.nvim',
         lazy = false,
         priority = 1000,
         config = function()
-            require('nightfox').setup {
+            require 'nightfox'.setup {
                 options = { transparent = true }
             }
             vim.cmd.colorscheme 'terafox'
         end
     },
+
     {
-        'feline-nvim/feline.nvim', -- Status line
+        'feline-nvim/feline.nvim',
         lazy = false,
         config = function()
             require 'config.feline'
         end
     },
+
     {
-        'nanozuki/tabby.nvim', -- Tab
+        'nanozuki/tabby.nvim',
         lazy = false,
         config = function()
             require 'config.tabby'

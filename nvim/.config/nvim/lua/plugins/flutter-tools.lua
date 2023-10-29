@@ -5,10 +5,10 @@ return {
         ft = 'dart',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            'stevearc/dressing.nvim', -- Optional for vim.ui.select
+            'stevearc/dressing.nvim',
         },
         config = function()
-            require('flutter-tools').setup()
+            require 'flutter-tools'.setup()
         end
     },
 }

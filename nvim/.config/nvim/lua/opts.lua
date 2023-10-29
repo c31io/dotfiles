@@ -23,7 +23,7 @@ o.cursorline = true
 o.ignorecase = true
 
 -- Mappings --
-local function m(from, to) return vim.keymap.set({'n', 'v', 'i'}, from, to) end
+local function m(from, to) return vim.keymap.set({ 'n', 'v', 'i' }, from, to) end
 
 -- Git commands
 m('<Leader>gf', ':!gf<CR>')

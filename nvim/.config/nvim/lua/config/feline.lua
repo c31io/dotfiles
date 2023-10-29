@@ -98,7 +98,7 @@ _G._generate_user_statusline_highlights = function()
     end
 
     local status = vim.o.background == "dark" and { fg = pal.black, bg = pal.white } or
-    { fg = pal.white, bg = pal.black }
+        { fg = pal.white, bg = pal.black }
 
     local groups = {
         -- statusline
@@ -204,21 +204,6 @@ local icons = {
     mathematical_L = "𝑳",
     vertical_bar = "┃",
     vertical_bar_thin = "│",
-    right = "",
-    block = "",
-    right_filled = "",
-    slant_left = "",
-    slant_left_thin = "",
-    slant_right = "",
-    slant_right_thin = "",
-    slant_left_2 = "",
-    slant_left_2_thin = "",
-    slant_right_2 = "",
-    slant_right_2_thin = "",
-    left_rounded = "",
-    left_rounded_thin = "",
-    right_rounded = "",
-    right_rounded_thin = "",
     circle = "●",
 }
 
@@ -355,7 +340,8 @@ local active = {
         c.fileinfo,
         c.default, -- must be last
     },
-    {          -- right
+
+    { -- right
         c.lsp_status,
         c.lsp_error,
         c.lsp_warn,
@@ -373,7 +359,7 @@ local inactive = {
     { c.in_position }, -- right
 }
 
-require("feline").setup({
+require 'feline'.setup {
     components = { active = active, inactive = inactive },
     highlight_reset_triggers = {},
     force_inactive = {
@@ -397,4 +383,4 @@ require("feline").setup({
             "startify",
         },
     },
-})
+}

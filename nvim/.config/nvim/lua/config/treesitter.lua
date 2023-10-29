@@ -1,5 +1,4 @@
--- Treesitter Plugin Setup
-require('nvim-treesitter.configs').setup {
+require 'nvim-treesitter.configs'.setup {
     ensure_installed = { "lua", "rust", "toml" },
     sync_install = false,
     auto_install = true,
@@ -15,7 +14,6 @@ require('nvim-treesitter.configs').setup {
     }
 }
 
--- Treesitter folding
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.wo.foldenable = false

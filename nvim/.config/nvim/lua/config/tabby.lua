@@ -109,7 +109,7 @@ vim.api.nvim_create_autocmd({ "SessionLoadPost", "ColorScheme" }, {
     end,
 })
 
-local filename = require("tabby.filename")
+local filename = require 'tabby.filename'
 local line = {
     hl = "TabLineFill",
     layout = "active_wins_at_tail",
@@ -120,8 +120,6 @@ local line = {
                 hl = "UserTLActive",
             }
         end,
-        left_sep = { "", hl = "UserTLActiveSep" },
-        right_sep = { "", hl = "UserTLActiveSep" },
     },
     inactive_tab = {
         label = function(tabid)
@@ -130,8 +128,6 @@ local line = {
                 hl = "UserTLBoldLine",
             }
         end,
-        left_sep = { "", hl = "UserTLLineSep" },
-        right_sep = { "", hl = "UserTLLineSep" },
     },
     top_win = {
         label = function(winid)
@@ -140,8 +136,6 @@ local line = {
                 hl = "TabLine",
             }
         end,
-        left_sep = { "", hl = "UserTLLineSep" },
-        right_sep = { "", hl = "UserTLLineSep" },
     },
     win = {
         label = function(winid)
@@ -150,15 +144,13 @@ local line = {
                 hl = "TabLine",
             }
         end,
-        left_sep = { "", hl = "UserTLLineSep" },
-        right_sep = { "", hl = "UserTLLineSep" },
     },
 }
 
-require("tabby").setup({
+require 'tabby'.setup {
     tabline = line,
     nerdfont = true,
-})
+}
 
 vim.api.nvim_set_keymap("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
