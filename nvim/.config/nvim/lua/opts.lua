@@ -28,12 +28,12 @@ local function m(from, to) return vim.keymap.set({ 'n', 'v', 'i' }, from, to) en
 -- Git commands
 m('<Leader>gf', ':!gf<CR>')
 m('<Leader>gst', ':!gst<CR>')
-m('<Leader>gl', ':terminal gl<CR>')
-m('<Leader>gcm', ':terminal gcm<CR>ii')
+m('<Leader>gl', ':split term://gl<CR>')
+m('<Leader>gcm', ':split term:// gcm<CR>ii')
 m('<Leader>ga', ':!ga<CR>')
 m('<Leader>gr', ':!gr<CR>')
 m('<Leader>gp', ':!gp<CR>')
-m('<Leader>gd', ':terminal gd<CR>i')
+m('<Leader>gd', ':split term://gd<CR>i')
 
 -- Cargo commands
 m('<Leader>cf', ':update<CR>:!cargo fmt<CR>')
@@ -43,7 +43,7 @@ m('<Leader>cr', ':update<CR>:vsplit term://cargo run<CR>')
 m('<Leader>ct', ':update<CR>:vsplit term://cargo test<CR>')
 
 -- Haskell commands
-m('<Leader>hr', ':update<CR>:terminal ghci *.hs <CR>i')
+m('<Leader>hr', ':update<CR>:vsplit term://ghci *.hs <CR>i')
 
 -- Flutter commands
 m('<Leader>fr', ':FlutterRun -d linux<CR>')
