@@ -44,7 +44,7 @@ return {
     {
         'ggandor/leap.nvim', -- Motion
         lazy = true,
-        keys = 's',
+        event = 'VeryLazy',
         dependencies = { { 'tpope/vim-repeat' } },
         config = function()
             require 'leap'.add_default_mappings()
