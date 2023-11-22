@@ -23,7 +23,7 @@ default_border none
 default_floating_border none
 title_align center
 titlebar_border_thickness 0
-titlebar_padding 0 0
+titlebar_padding 0
 client.focused $none $background $white
 client.focused_inactive $none $gray $white
 client.focused_tab_title $none $gray $white
@@ -64,6 +64,12 @@ input "1386:891:Wacom_One_by_Wacom_M_Pen" {
     # ABS_X 21600 ABS_Y 13500
     #map_to_output eDP-1
     map_to_region 0 0 1920 1200
+}
+input type:keyboard {
+    repeat_rate 20
+    repeat_delay 250
+    xkb_options caps:swapescape
+    #xkb_options caps:escape_shifted_capslock
 }
 ### Key bindings
 # Basics:
@@ -160,6 +166,7 @@ bindsym --locked XF86MonBrightnessUp exec light -A 5 && $light
 bindsym --locked XF86MonBrightnessDown exec light -U 5 && $light
 bindsym --locked XF86MonBrightnessUp+Shift exec light -A 1 && $light
 bindsym --locked XF86MonBrightnessDown+Shift exec light -U 1 && $light
+bindsym XF86PowerOff exec foot -a float paru
 # Status Notification
 bindsym $mod+c exec notify-send "BAT0 $(cat /sys/class/power_supply/BAT0/capacity /sys/class/power_supply/BAT0/status)" -t 1000
 bindsym $mod+i exec notify-send "$(iwctl station wlan0 show | rg network | awk '{print substr($0,index($0,$3))}' | awk '{$1=$1};1')" -t 1000
