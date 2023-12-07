@@ -164,6 +164,8 @@ bindsym --locked XF86AudioNext exec mpc -q next && $mpc
 bindsym --locked XF86AudioPause exec mpc -q toggle && $mpc
 bindsym --locked XF86MonBrightnessUp exec light -A 5 && $light
 bindsym --locked XF86MonBrightnessDown exec light -U 5 && $light
+bindsym --locked XF86MonBrightnessUp+Alt exec light -S 100 && $light
+bindsym --locked XF86MonBrightnessDown+Alt exec light -S 0.02 && $light
 bindsym --locked XF86MonBrightnessUp+Shift exec light -A 1 && $light
 bindsym --locked XF86MonBrightnessDown+Shift exec light -U 1 && $light
 bindsym XF86PowerOff exec foot -a float paru

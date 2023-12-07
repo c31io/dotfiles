@@ -121,8 +121,7 @@ font:
     #   - (Windows) Consolas
     #family: monospace
     #family: FuraMono Nerd Font
-    #family: JetBrainsMonoNerd
-    family: JetBrainsMonoNL
+    family: JetBrainsMonoNLNerdFontMono
     #family: NotoSansMono
 
     # The `style` can be specified to pick a specific face.
