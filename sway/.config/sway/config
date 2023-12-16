@@ -7,8 +7,9 @@ set $down j
 set $up k
 set $right l
 set $term alacritty
-set $menu dmenu_run_history -sb "#444444"
-set $font Nothing You Could Do Bold
+set $menu dmenu_run_history -fn NotoSansLight -sb "#444444"
+set $font Noto Sans Light
+set $size 12
 set $foreground #DDDDDDCC
 set $background #444444CC
 set $none #00000000
@@ -18,7 +19,7 @@ set $gray #888888CC
 set $black #222222CC
 set $red #EE4444CC
 ### Appearance
-font $font 12
+font $font $size
 default_border none
 default_floating_border none
 title_align center
@@ -183,8 +184,8 @@ bar {
         inactive_workspace $gray $gray $foreground
         urgent_workspace $red $red $foreground
     }
-    font $font 17
-    height 33
+    font $font $size
+    height 24
     icon_theme Papirus
     mode hide
     status_command ~/.config/sway/status_command.sh
