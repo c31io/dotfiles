@@ -1,5 +1,5 @@
 [http]
-	proxy = http://127.0.0.1:7890
+	proxy = http://127.0.0.1:20171
 
 [user]
 	email = celiogrand@outlook.com
