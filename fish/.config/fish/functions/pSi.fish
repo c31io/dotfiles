@@ -1,3 +1,3 @@
-function pSi --wraps='pacman -Si' --description 'alias pSi=pacman -Si'
-  pacman -Si $argv; 
+function pSi
+  apt show $argv; 
 end

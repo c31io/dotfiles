@@ -27,5 +27,5 @@ function backup_home
     --exclude ~/.config/Element         \
     --exclude ~/.config/Code\ -\ OSS    \
     --exclude ~/.vscode-oss             \
-    /home /mnt/hdd
+    /home /hdd
 end

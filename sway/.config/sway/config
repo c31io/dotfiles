@@ -7,7 +7,7 @@ set $down j
 set $up k
 set $right l
 set $term foot
-set $menu dmenu_run_history -fn NotoSansLight -sb "#444444"
+set $menu wofi --show run --gtk-dark
 set $font Noto Sans Light
 set $size 12
 set $foreground #DDDDDDCC
@@ -36,18 +36,11 @@ bindgesture swipe:left workspace next
 ### Apps
 bindsym $mod+q exec qbittorrent
 bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec google-chrome-stable --gtk-version=4 --proxy-server='socks5://127.0.0.1:7890'
-bindsym $mod+F3 exec google-chrome-stable --gtk-version=4
-bindsym $mod+F4 exec neovide
-bindsym $mod+F5 exec zettlr
-bindsym $mod+F6 exec solfege
-bindsym $mod+F7 bar mode toggle
-bindsym --locked $mod+F8 output eDP-1 toggle
-bindsym --locked $mod+F10 exec swaymsg output eDP-1 power toggle && swaymsg output HDMI-A-1 power toggle
+bindsym $mod+F2 exec flatpak run com.google.Chrome --enable-features=UseOzonePlatform --ozone-platform=wayland
 ### Floating term
 for_window [app_id="float"] floating enable
-bindsym $mod+equal exec foot -a float htop
-bindsym $mod+Shift+Return exec $term --class float
+bindsym $mod+equal exec $term -a float htop
+bindsym $mod+Shift+Return exec $term -a float
 ### Output configuration
 output * bg ~/.bg fill
 output eDP-1 resolution 1920x1080 position 0,1080
@@ -70,7 +63,6 @@ input type:keyboard {
     repeat_rate 20
     repeat_delay 250
     xkb_options caps:swapescape
-    #xkb_options caps:escape_shifted_capslock
 }
 ### Key bindings
 # Basics:

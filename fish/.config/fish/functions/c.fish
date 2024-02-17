@@ -1,4 +1,3 @@
-function c --wraps=cd --description 'alias c=cd'
+function c
   cd $argv
-        
 end

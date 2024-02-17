@@ -1,5 +1,5 @@
 function hp
-  set -lx http_proxy 127.0.0.1:7890
+  set -lx http_proxy 127.0.0.1:20171
   set -lx https_proxy $http_proxy
   set -lx ftp_proxy $http_proxy
   set -lx ftps_proxy $http_proxy

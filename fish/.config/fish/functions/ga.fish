@@ -1,4 +1,3 @@
-function ga --wraps='git add --all' --description 'alias ga=git add --all'
+function ga
   git add --all $argv
-        
 end

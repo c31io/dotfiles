@@ -1,3 +1,3 @@
-function sv --wraps='sudo nvim' --description 'alias sv=sudo nvim'
-  sudo nvim $argv; 
+function sv
+  sudo vim $argv; 
 end

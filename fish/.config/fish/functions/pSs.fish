@@ -1,3 +1,3 @@
-function pSs --wraps='pacman -Ss' --description 'alias pSs=pacman -Ss'
-  pacman -Ss $argv; 
+function pSs
+  apt search $argv; 
 end

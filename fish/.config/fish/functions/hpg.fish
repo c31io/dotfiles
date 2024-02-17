@@ -1,5 +1,5 @@
 function hpg
-  set -gx http_proxy 127.0.0.1:7890
+  set -gx http_proxy 127.0.0.1:20171
   set -gx https_proxy $http_proxy
   set -gx ftp_proxy $http_proxy
   set -gx ftps_proxy $http_proxy
