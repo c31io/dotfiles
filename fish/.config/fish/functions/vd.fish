@@ -1,3 +1,3 @@
 function vd
-  v ~/Documents/diary/$(date -I) $argv; 
+  v ~/vd/$(date -I) $argv; 
 end

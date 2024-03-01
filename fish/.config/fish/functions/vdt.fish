@@ -1,3 +1,3 @@
 function vdt
-  ls -r ~/Documents/diary/* | xargs bat $argv
+  ls -r ~/vd/* | xargs batcat
 end
