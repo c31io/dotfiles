@@ -1,3 +1,3 @@
 function c
-  cd $argv
+  z $argv
 end
