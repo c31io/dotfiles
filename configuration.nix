@@ -26,8 +26,10 @@
     printing.enable = true;
     v2raya.enable = true;
   };
+
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+
   environment.systemPackages = with pkgs; [
     alacritty
     curl
@@ -37,12 +39,18 @@
     wget
   ];
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+  ];
+
   programs.fish.enable = true;
+
   users.users.c31io = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.fish;
   };
+
   home-manager.users.c31io = import ./home.nix;
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
@@ -50,6 +58,7 @@
   nix.settings.substituters = [
     "https://mirrors.cernet.edu.cn/nix-channels/store"
   ];
+
   system.copySystemConfiguration = true;
   system.stateVersion = "23.11";
 }

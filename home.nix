@@ -6,6 +6,7 @@ in
 {
   programs = {
     zoxide.enable = true;
+
     ssh.enable = true;
     ssh.matchBlocks = {
       "github.com" = {
@@ -14,15 +15,27 @@ in
         user = "git";
       };
     };
-    git = {
-      enable = true;
-      userName = "Celio Grand";
-      userEmail = "celiogrand@outlook.com";
-      includes = [];
-    };
   };
+
+  home.packages = with pkgs; [
+    alacritty
+    bat
+    eza
+    fish
+    gcc
+    gh
+    git
+    gnumake
+    neovim
+    ripgrep
+  ];
+
   home.file = {
+    ".config/alacritty".source = link ./alacritty;
     ".config/fish".source = link ./fish;
+    ".gitconfig".source = link ./git/.gitconfig;
+    ".config/nvim".source = link ./nvim;
   };
+
   home.stateVersion = "23.11";
 }

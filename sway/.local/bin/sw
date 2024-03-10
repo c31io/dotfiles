@@ -1,5 +1,0 @@
-#!/bin/sh
-set -a
-[ -f $HOME/.config/sway/env ] && . "$HOME/.config/sway/env"
-set +a
-exec sway > /tmp/sway.log 2>&1

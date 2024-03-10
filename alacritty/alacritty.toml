@@ -1,0 +1,24 @@
+[colors.primary]
+background = "#002020"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 7
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMonoNLNerdFontMono"
+style = "Regular"
+
+[window]
+opacity = 0.8
