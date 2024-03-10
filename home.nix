@@ -1,6 +1,11 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }:
+
+let
+  link = config.lib.file.mkOutOfStoreSymlink;
+in
+{
   programs = {
-    fish.enable = true;
+    zoxide.enable = true;
     ssh.enable = true;
     ssh.matchBlocks = {
       "github.com" = {
@@ -16,9 +21,8 @@
       includes = [];
     };
   };
-  xdg.enable = true;
-  xdg.configFile = {
-    "fish".source = ./fish;
+  home.file = {
+    ".config/fish".source = link ./fish;
   };
   home.stateVersion = "23.11";
 }
