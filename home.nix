@@ -20,14 +20,18 @@ in
   home.packages = with pkgs; [
     alacritty
     bat
+    calibre
     eza
     fish
     gcc
     gh
     git
     gnumake
+    htop
     neovim
+    racket
     ripgrep
+    telegram-desktop
   ];
 
   home.file = {
