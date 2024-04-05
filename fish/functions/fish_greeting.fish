@@ -1,5 +1,5 @@
 function fish_greeting
-    if test $TERM = "foot"
+    if test $TERM = "alacritty"
         set adage \
         " ℂ𝔸ℝℙ𝔼 𝔻𝕀𝔼𝕄" \
         " 𝕋𝔼𝕄ℙ𝕌𝕊 𝔽𝕌𝔾𝕀𝕋" \

@@ -1,3 +1,3 @@
 function dfh
-  df -h -x tmpfs -x devtmpfs -x efivarfs $argv; 
+  bcachefs fs usage -h
 end

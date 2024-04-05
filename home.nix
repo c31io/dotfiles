@@ -27,8 +27,12 @@ in
     gh
     git
     gnumake
+    google-chrome
+    ghostscript
     htop
+    libreoffice-qt
     neovim
+    python3
     racket
     ripgrep
     telegram-desktop

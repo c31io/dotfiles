@@ -14,7 +14,17 @@
   networking.hostName = "naptop";
   networking.networkmanager.enable = true;
   time.timeZone = "Asia/Shanghai";
-  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    inputMethod = {
+      enabled = "fcitx5";
+      fcitx5.addons = with pkgs; [
+        fcitx5-chinese-addons
+        fcitx5-gtk
+      ];
+    };
+  };
 
   services = {
     xserver.enable = true;
@@ -23,6 +33,7 @@
     xserver.desktopManager.plasma5.enable = true;
     xserver.desktopManager.xterm.enable = false;
     xserver.xkb.options = "caps:swapescape";
+    smartd.enable = true;
     printing.enable = true;
     v2raya.enable = true;
   };
@@ -36,10 +47,14 @@
     firefox
     fish
     neovim
+    smartmontools
     wget
   ];
 
   fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
   ];
 
@@ -58,6 +73,7 @@
   nix.settings.substituters = [
     "https://mirrors.cernet.edu.cn/nix-channels/store"
   ];
+  nixpkgs.config.allowUnfree = true;
 
   system.copySystemConfiguration = true;
   system.stateVersion = "23.11";
