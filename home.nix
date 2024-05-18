@@ -24,6 +24,7 @@ in
     git gh
     ghostscript
     neovim xclip tree-sitter
+    yt-dlp
     # GUI
     calibre
     google-chrome
@@ -42,8 +43,9 @@ in
   home.file = {
     ".config/alacritty".source = link ./alacritty;
     ".config/fish".source = link ./fish;
-    ".gitconfig".source = link ./git/.gitconfig;
     ".config/nvim".source = link ./nvim;
+    ".config/yt-dlp".source = link ./yt-dlp;
+    ".gitconfig".source = link ./git/.gitconfig;
   };
 
   home.stateVersion = "23.11";

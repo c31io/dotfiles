@@ -1,11 +1,5 @@
 --ignore-errors
-#--no-playlist
-
-# Use proxy
-#--proxy 127.0.0.1:7890
-
-# Save in HDD
--o "/hdd/youtube/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"
+-o "~/youtube/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"
 
 # Save english subtitle
 --write-sub --write-auto-sub --sub-langs "en.*"
