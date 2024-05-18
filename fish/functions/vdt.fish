@@ -1,3 +1,3 @@
 function vdt
-  ls -r ~/vd/* | xargs batcat
+  ls -r ~/vd/* | xargs bat
 end

@@ -11,6 +11,15 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  networking.firewall = {
+    allowedTCPPorts = [ 1688 8000 ]; # vlmcsd
+    allowedTCPPortRanges = [ 
+      { from = 1714; to = 1764; } # KDE Connect
+    ];  
+    allowedUDPPortRanges = [ 
+      { from = 1714; to = 1764; } # KDE Connect
+    ];  
+  };
   networking.hostName = "naptop";
   networking.networkmanager.enable = true;
   time.timeZone = "Asia/Shanghai";
@@ -28,8 +37,8 @@
 
   services = {
     xserver.enable = true;
-    xserver.libinput.enable = true;
-    xserver.displayManager.sddm.enable = true;
+    libinput.enable = true;
+    displayManager.sddm.enable = true;
     xserver.desktopManager.plasma5.enable = true;
     xserver.desktopManager.xterm.enable = false;
     xserver.xkb.options = "caps:swapescape";

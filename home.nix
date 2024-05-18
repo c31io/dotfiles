@@ -18,24 +18,25 @@ in
   };
 
   home.packages = with pkgs; [
-    alacritty
-    bat
-    calibre
-    eza
-    fish
-    gcc
-    gh
-    git
-    gnumake
-    google-chrome
+    # CLI
+    alacritty fish
+    bat eza htop lsof procs ripgrep
+    git gh
     ghostscript
-    htop
+    neovim xclip tree-sitter
+    # GUI
+    calibre
+    google-chrome
+    kdeconnect
     libreoffice-qt
-    neovim
+    telegram-desktop
+    zotero
+    # PL
+    gcc
+    gnumake
+    nodejs
     python3
     racket
-    ripgrep
-    telegram-desktop
   ];
 
   home.file = {
