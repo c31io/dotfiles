@@ -30,6 +30,7 @@ in
     google-chrome
     kdeconnect
     libreoffice-qt
+    obsidian
     telegram-desktop
     zotero
     # PL
@@ -41,11 +42,11 @@ in
   ];
 
   home.file = {
-    ".config/alacritty".source = link ./alacritty;
-    ".config/fish".source = link ./fish;
-    ".config/nvim".source = link ./nvim;
-    ".config/yt-dlp".source = link ./yt-dlp;
-    ".gitconfig".source = link ./git/.gitconfig;
+    ".config/alacritty".source = link ../alacritty;
+    ".config/fish".source = link ../fish;
+    ".config/nvim".source = link ../nvim;
+    ".config/yt-dlp".source = link ../yt-dlp;
+    ".gitconfig".source = link ../git/.gitconfig;
   };
 
   home.stateVersion = "23.11";
