@@ -39,7 +39,7 @@
     xserver.enable = true;
     libinput.enable = true;
     displayManager.sddm.enable = true;
-    xserver.desktopManager.plasma6.enable = true;
+    desktopManager.plasma6.enable = true;
     xserver.desktopManager.xterm.enable = false;
     xserver.xkb.options = "caps:swapescape";
     smartd.enable = true;
