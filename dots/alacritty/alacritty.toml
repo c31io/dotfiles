@@ -9,7 +9,7 @@ action = "ToggleFullscreen"
 TERM = "alacritty"
 
 [font]
-size = 7
+size = 11
 
 [font.normal]
 family = "JetBrainsMonoNLNerdFontMono"

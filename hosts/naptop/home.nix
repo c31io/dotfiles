@@ -42,11 +42,11 @@ in
   ];
 
   home.file = {
-    ".config/alacritty".source = link ../alacritty;
-    ".config/fish".source = link ../fish;
-    ".config/nvim".source = link ../nvim;
-    ".config/yt-dlp".source = link ../yt-dlp;
-    ".gitconfig".source = link ../git/.gitconfig;
+    ".config/alacritty".source = link ../../dots/alacritty;
+    ".config/fish".source = link ../../dots/fish;
+    ".config/nvim".source = link ../../dots/nvim;
+    ".config/yt-dlp".source = link ../../dots/yt-dlp;
+    ".gitconfig".source = link ../../dots/git/.gitconfig;
   };
 
   home.stateVersion = "23.11";
