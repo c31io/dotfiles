@@ -3,7 +3,6 @@
 {
   imports =
     [
-      <home-manager/nixos>
       ./hardware-configuration.nix
     ];
 
@@ -49,16 +48,20 @@
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   environment.systemPackages = with pkgs; [
     alacritty
     curl
     firefox
     fish
+    git
     neovim
     smartmontools
     wget
   ];
+  environment.variables.EDITOR = "nvim";
 
   fonts.packages = with pkgs; [
     noto-fonts
@@ -68,6 +71,7 @@
   ];
 
   programs.fish.enable = true;
+  programs.kdeconnect.enable = true;
 
   users.users.c31io = {
     isNormalUser = true;
@@ -75,16 +79,12 @@
     shell = pkgs.fish;
   };
 
-  home-manager.users.c31io = import ./home.nix;
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
-
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.substituters = [
     "https://mirrors.cernet.edu.cn/nix-channels/store"
   ];
   nixpkgs.config.allowUnfree = true;
 
-  system.copySystemConfiguration = true;
   system.stateVersion = "23.11";
 }
 

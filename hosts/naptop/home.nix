@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  link = config.lib.file.mkOutOfStoreSymlink;
+  link = path: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/dots/${path}";
 in
 {
   programs = {
@@ -20,7 +20,7 @@ in
   home.packages = with pkgs; [
     # CLI
     alacritty fish
-    bat eza htop lsof procs ripgrep
+    bat eza fd htop lsof procs ripgrep
     git gh
     ghostscript
     neovim xclip tree-sitter
@@ -28,7 +28,6 @@ in
     # GUI
     calibre
     google-chrome
-    kdeconnect
     libreoffice-qt
     obsidian
     telegram-desktop
@@ -41,12 +40,12 @@ in
     racket
   ];
 
-  home.file = {
-    ".config/alacritty".source = link ../../dots/alacritty;
-    ".config/fish".source = link ../../dots/fish;
-    ".config/nvim".source = link ../../dots/nvim;
-    ".config/yt-dlp".source = link ../../dots/yt-dlp;
-    ".gitconfig".source = link ../../dots/git/.gitconfig;
+  xdg.configFile = {
+    "alacritty".source = link "alacritty";
+    "fish".source = link "fish";
+    "nvim".source = link "nvim";
+    "yt-dlp".source = link "yt-dlp";
+    "../.gitconfig".source = link "git/.gitconfig";
   };
 
   home.stateVersion = "23.11";
