@@ -1,3 +1,3 @@
 function bsu
-  sudo nixos-rebuild switch --upgrade $argv
+  nix flake update ~/dotfiles/hosts/$hostname && bs
 end

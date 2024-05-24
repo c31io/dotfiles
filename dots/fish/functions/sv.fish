@@ -1,3 +1,3 @@
 function sv
-  sudo vim $argv; 
+  sudo nvim $argv; 
 end
