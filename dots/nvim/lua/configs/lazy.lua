@@ -24,6 +24,7 @@ return {
         "netrwPlugin",
         "netrwSettings",
         "netrwFileHandlers",
+        "manson", -- NixOS
         "matchit",
         "tar",
         "tarPlugin",

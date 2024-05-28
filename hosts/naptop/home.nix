@@ -23,6 +23,7 @@ in
     git gh
     ghostscript
     neovim tree-sitter wl-clipboard
+    unzip
     yt-dlp
     # GUI
     alacritty
@@ -34,6 +35,8 @@ in
     zotero
     # PL
     gcc gnumake
+    julia-bin
+    lua-language-server
     nodejs
     python3
     racket
