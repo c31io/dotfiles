@@ -19,13 +19,13 @@ in
 
   home.packages = with pkgs; [
     # CLI
-    alacritty fish
     bat eza fd htop lsof procs ripgrep
     git gh
     ghostscript
-    neovim xclip tree-sitter
+    neovim tree-sitter wl-clipboard
     yt-dlp
     # GUI
+    alacritty
     calibre
     google-chrome
     libreoffice-qt
@@ -33,8 +33,7 @@ in
     telegram-desktop
     zotero
     # PL
-    gcc
-    gnumake
+    gcc gnumake
     nodejs
     python3
     racket
