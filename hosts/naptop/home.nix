@@ -45,7 +45,7 @@ in
     "fish".source = link "fish";
     "nvim".source = link "nvim";
     "yt-dlp".source = link "yt-dlp";
-    "../.gitconfig".source = link "git/.gitconfig";
+    "git".source = link "git";
   };
 
   home.stateVersion = "23.11";
