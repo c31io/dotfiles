@@ -15,6 +15,7 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+          ../../mods/kde.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
