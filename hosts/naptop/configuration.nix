@@ -17,10 +17,11 @@
     shell = pkgs.fish;
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.substituters = [
-    "https://mirrors.cernet.edu.cn/nix-channels/store"
-  ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    substituters = [ "https://mirrors.cernet.edu.cn/nix-channels/store" ];
+    trusted-users = [ "c31io" ];
+  };
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "23.11";

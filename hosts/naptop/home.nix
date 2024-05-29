@@ -22,9 +22,11 @@ in
     bat eza fd htop lsof procs ripgrep
     git gh
     ghostscript
-    neovim tree-sitter wl-clipboard
     unzip
     yt-dlp
+    # NeoVim
+    neovim tree-sitter wl-clipboard
+    gcc gnumake lua-language-server
     # GUI
     alacritty
     calibre
@@ -33,10 +35,9 @@ in
     obsidian
     telegram-desktop
     zotero
-    # PL
-    gcc gnumake
+    # Develop
+    devenv
     julia-bin
-    lua-language-server
     nodejs
     python3
     racket
