@@ -5,6 +5,7 @@ let
 in
 {
   programs = {
+    direnv.enable = true;
     zoxide.enable = true;
 
     ssh.enable = true;

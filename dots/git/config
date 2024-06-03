@@ -18,10 +18,10 @@
     tool = nvimdiff
 
 [difftool "nvimdiff"]
-    cmd = nvim --noplugin -d \"$LOCAL\" \"$REMOTE\"
+    cmd = nvim --clean -d \"$LOCAL\" \"$REMOTE\"
 
 [merge]
 	tool = nvimdiff
 
 [mergetool "nvimdiff"]
-	cmd = nvim --noplugin -d \"$LOCAL\" \"$MERGED\" \"$BASE\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd J\"
+	cmd = nvim --clean -d \"$LOCAL\" \"$MERGED\" \"$BASE\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd J\"
