@@ -10,10 +10,12 @@
   time.timeZone = "Asia/Shanghai";
   networking.hostName = "naptop";
   networking.firewall.allowedTCPPorts = [ 1688 8000 ]; # vlmcsd
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   users.users.c31io = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "libvirtd"];
     shell = pkgs.fish;
   };
 
