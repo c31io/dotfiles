@@ -42,6 +42,8 @@ in
     nodejs
     python3
     racket
+    # VM
+    quickemu
   ];
 
   xdg.configFile = {
@@ -50,13 +52,6 @@ in
     "nvim".source = link "nvim";
     "yt-dlp".source = link "yt-dlp";
     "git".source = link "git";
-  };
-
-  dconf.settings = {
-      "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
-    };
   };
 
   home.stateVersion = "23.11";
