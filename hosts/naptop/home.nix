@@ -16,6 +16,8 @@ in
         user = "git";
       };
     };
+
+    vscode.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -32,18 +34,21 @@ in
     alacritty
     calibre
     google-chrome
+    gparted exfat
     libreoffice-qt
     obsidian
     telegram-desktop
+    ventoy-full
     zotero
     # Develop
     devenv
-    julia-bin
+    julia
     nodejs
+    octaveFull
     python3
     racket
     # VM
-    quickemu
+    quickemu sambaFull spice-gtk
   ];
 
   xdg.configFile = {

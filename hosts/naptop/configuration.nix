@@ -1,5 +1,5 @@
+flake-overlays:
 { config, lib, pkgs, ... }:
-
 {
   imports = [ ./hardware-configuration.nix ];
   boot.loader.systemd-boot.enable = true;
@@ -22,6 +22,7 @@
     substituters = [ "https://mirrors.cernet.edu.cn/nix-channels/store" ];
     trusted-users = [ "c31io" ];
   };
+  nixpkgs.overlays = flake-overlays;
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "23.11";
