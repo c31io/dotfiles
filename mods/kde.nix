@@ -17,7 +17,8 @@
 
   i18n = {
     inputMethod = {
-      enabled = "fcitx5";
+      type = "fcitx5";
+      enable = true;
       fcitx5.waylandFrontend = true;
       fcitx5.addons = with pkgs; [
         fcitx5-chinese-addons
@@ -37,7 +38,6 @@
     v2raya.enable = true;
   };
 
-  sound.enable = true;
   hardware.pulseaudio.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
