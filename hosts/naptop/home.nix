@@ -28,14 +28,14 @@ in
     unzip
     yt-dlp
     # NeoVim
-    neovim tree-sitter wl-clipboard
+    neovim stylua tree-sitter wl-clipboard
     gcc gnumake lua-language-server
     # GUI
     alacritty
     calibre
     google-chrome
     gparted exfat
-    libreoffice-qt
+    libreoffice-qt-still
     obsidian
     telegram-desktop
     ventoy-full
