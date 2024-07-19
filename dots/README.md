@@ -4,7 +4,3 @@
     - fish
     - git
     - nvim
-
-- Pending
-    - alacritty
-    - yt-dlp
