@@ -10,6 +10,7 @@ flake-overlays:
   time.timeZone = "Asia/Shanghai";
   networking.hostName = "naptop";
   networking.firewall.allowedTCPPorts = [ 1688 8000 ]; # vlmcsd
+  services.smartd.enable = true;
 
   users.users.c31io = {
     isNormalUser = true;
@@ -27,4 +28,3 @@ flake-overlays:
 
   system.stateVersion = "23.11";
 }
-

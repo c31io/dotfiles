@@ -9,11 +9,12 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nix-matlab, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
-      naptop = nixpkgs.lib.nixosSystem {
+      hyperz = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+	        ./configuration.nix
           ../../mods/cli.nix
           home-manager.nixosModules.home-manager
           {

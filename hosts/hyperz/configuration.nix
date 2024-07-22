@@ -5,7 +5,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "hyperz";
-  networking.networkmanager.enable = true;
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Asia/Shanghai";
 
@@ -17,7 +16,6 @@
 
   environment.systemPackages = with pkgs; [ git neovim ];
 
-  programs.fish.enable = true;
   services.openssh.enable = true;
   services.v2raya.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 2017 ];

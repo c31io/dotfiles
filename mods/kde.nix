@@ -3,7 +3,6 @@
 {
   imports = [ ./cli.nix ];
 
-  networking.networkmanager.enable = true;
   programs.kdeconnect.enable = true;
 
   networking.firewall = {

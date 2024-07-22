@@ -2,7 +2,7 @@
 
 ## Usage
 
-Create your own `./hosts/YOUR_HOST/*.nix`, then apply them.
+Create your `./hosts/YOUR_HOST/*.nix`, commit and apply.
 
 ```fish
 # Defined in /home/c31io/.config/fish/functions/bs.fish @ line 1
