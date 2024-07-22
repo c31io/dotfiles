@@ -19,4 +19,16 @@ return {
 			require("conform").setup(opts)
 		end,
 	},
+
+	{
+		"ggandor/leap.nvim",
+		keys = {
+			{ "s", desc = "leap forward to" },
+			{ "S", desc = "leap backward to" },
+			{ "gs", desc = "leap from window" },
+		},
+		config = function()
+			require("leap").add_default_mappings()
+		end,
+	},
 }
