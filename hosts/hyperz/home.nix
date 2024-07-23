@@ -35,7 +35,6 @@ in
   home.packages = with pkgs; [
     # CLI
     bat eza fd htop lsof procs ripgrep
-    git gh
     unzip
     # NeoVim
     neovim stylua tree-sitter wl-clipboard

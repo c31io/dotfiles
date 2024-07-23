@@ -55,7 +55,6 @@ in
   home.packages = with pkgs; [
     # CLI
     bat eza fd htop lsof procs ripgrep
-    git gh
     ghostscript
     smartmontools
     unzip
