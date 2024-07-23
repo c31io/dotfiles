@@ -12,10 +12,17 @@ end
 ```
 ## Pitfalls
 
+Git commit *.nix before using flake.
+
+Delete dotfiles before switch.
+
+```fish
+rm -rf ~/.config/{git,fish,nvim}
+```
+
 Clear cache files before openning nvim.
 
 ```fish
-rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 ```
 
