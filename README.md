@@ -10,6 +10,14 @@ function bs
   sudo nixos-rebuild switch --flake ~/dotfiles/hosts/$hostname --show-trace
 end
 ```
+## Pitfalls
+
+Clear cache files before openning nvim.
+
+```fish
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+```
 
 ## READMEs
 
