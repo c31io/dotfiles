@@ -1,7 +1,11 @@
 flake-overlays:
 { config, lib, pkgs, ... }:
 {
-  imports = [ ./hardware-configuration.nix ../pc.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../mods/pc.nix
+  ];
+
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "naptop";
