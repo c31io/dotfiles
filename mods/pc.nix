@@ -13,6 +13,8 @@
   };
 
   environment.systemPackages = with pkgs; [ gh git neovim ];
+  environment.variables.EDITOR = "nvim";
+  networking.networkmanager.enable = true;
   programs.fish.enable = true;
   services.v2raya.enable = true;
 

@@ -4,6 +4,7 @@ flake-overlays:
   imports = [
     ./hardware-configuration.nix
     ../../mods/pc.nix
+    ../../mods/kde.nix
   ];
 
   boot.supportedFilesystems = [ "bcachefs" ];

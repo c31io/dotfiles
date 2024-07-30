@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./cli.nix ];
-
   programs.kdeconnect.enable = true;
 
   networking.firewall = {
@@ -34,7 +32,6 @@
     xserver.desktopManager.xterm.enable = false;
     xserver.xkb.options = "caps:swapescape";
     printing.enable = true;
-    v2raya.enable = true;
   };
 
   hardware.pulseaudio.enable = true;
