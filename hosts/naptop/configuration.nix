@@ -1,30 +1,13 @@
 flake-overlays:
 { config, lib, pkgs, ... }:
 {
-  imports = [ ./hardware-configuration.nix ];
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  imports = [ ./hardware-configuration.nix ../pc.nix ];
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  i18n.defaultLocale = "en_US.UTF-8";
-  time.timeZone = "Asia/Shanghai";
   networking.hostName = "naptop";
   networking.firewall.allowedTCPPorts = [ 1688 8000 ]; # vlmcsd
   services.smartd.enable = true;
-
-  users.users.c31io = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    shell = pkgs.fish;
-  };
-
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    substituters = [ "https://mirrors.cernet.edu.cn/nix-channels/store" ];
-    trusted-users = [ "c31io" ];
-  };
   nixpkgs.overlays = flake-overlays;
   nixpkgs.config.allowUnfree = true;
-
   system.stateVersion = "23.11";
 }

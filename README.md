@@ -2,7 +2,7 @@
 
 ## Usage
 
-Create your `./hosts/YOUR_HOST/*.nix`, commit and apply.
+Create your `./hosts/YOUR_HOST/*.nix`, git-add and apply.
 
 ```fish
 # Defined in /home/c31io/.config/fish/functions/bs.fish @ line 1
@@ -12,7 +12,7 @@ end
 ```
 ## Pitfalls
 
-Git commit *.nix before using flake.
+Git-add *.nix before using flake.
 
 Delete dotfiles before switch.
 
@@ -25,6 +25,8 @@ Clear cache files before openning nvim.
 ```fish
 rm -rf ~/.local/share/nvim
 ```
+
+On ratelimit errors, put `access-tokens = github.com=<token>` in `/root/.config/nix/nix.conf`.
 
 ## READMEs
 
