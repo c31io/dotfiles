@@ -37,16 +37,12 @@
     google-chrome
     gparted exfat
     libreoffice-qt-still
-    obsidian
     telegram-desktop
-    ventoy-full
+    ventoy
     zotero
     # Programming
-    julia
-    nodejs
     octaveFull
     python3
-    racket
     # VM
     quickemu sambaFull spice-gtk
   ];
