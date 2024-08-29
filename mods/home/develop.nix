@@ -23,7 +23,7 @@ in
   home.packages = with pkgs; [
     # CLI
     bat eza fd htop lsof procs ripgrep
-    unzip
+    tokei unzip
     # NeoVim
     neovim stylua tree-sitter wl-clipboard
     gcc gnumake lua-language-server
