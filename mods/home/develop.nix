@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  link = path: config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/dots/${path}";
+  link = import ./link.nix config;
 in
 {
   programs = {

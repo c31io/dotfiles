@@ -5,6 +5,7 @@ flake-overlays:
     ./hardware-configuration.nix
     ../../mods/pc.nix
     ../../mods/kde.nix
+    ../../mods/emacs.nix
   ];
 
   boot.supportedFilesystems = [ "bcachefs" ];

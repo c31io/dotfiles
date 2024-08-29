@@ -3,6 +3,7 @@
 {
   imports = [
     ../../mods/home/develop.nix
+    ../../mods/home/doom.nix
     ../../mods/home/yt-dlp.nix
   ];
 
