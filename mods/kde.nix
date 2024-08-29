@@ -47,5 +47,6 @@
     noto-fonts-cjk
     noto-fonts-emoji
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; } )
+    fira-sans
   ];
 }
