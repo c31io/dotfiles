@@ -35,6 +35,7 @@
     ghostscript smartmontools
     # GUI
     calibre
+    fractal
     google-chrome
     gparted exfat
     libreoffice-qt-still
