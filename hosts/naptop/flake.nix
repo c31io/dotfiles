@@ -7,21 +7,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-matlab = {
-      url = "gitlab:doronbehar/nix-matlab";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nix-matlab, ... }:
-    let
-      flake-overlays = [ nix-matlab.overlay ];
-    in {
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  {
     nixosConfigurations = {
       naptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          (import ./configuration.nix flake-overlays)
+          ./configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

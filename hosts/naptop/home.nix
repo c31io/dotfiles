@@ -34,19 +34,18 @@
     # CLI
     ghostscript smartmontools
     # GUI
+    bitwarden
     calibre
     fractal
     google-chrome
     gparted exfat
     libreoffice-qt-still
+    remmina
     telegram-desktop
     ventoy
-    zotero
     # Programming
     octaveFull
     python3
-    # VM
-    quickemu sambaFull spice-gtk
   ];
 
   home.stateVersion = "23.11";
