@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../../mods/pc.nix
     ../../mods/vm-client.nix
+    ../../mods/wiki-js.nix
   ];
 
   networking.hostName = "hyperl";
