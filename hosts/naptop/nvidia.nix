@@ -1,17 +1,20 @@
 { config, lib, pkgs, ... }:
 {
+  #boot.initrd.kernelModules = [ "nvidia" ];
+  #boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   hardware.graphics.enable = true;
   hardware.nvidia = {
     open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
     prime = {
-      intelBusId = "pci@0000:00:02.0";
-      nvidiaBusId = "pci@0000:01:00.0";
+      sync.enable = true;
+      intelBusId = "PCI:0:0:2";
+      nvidiaBusId = "PCI:0:1:0";
     };
-    powerManagement.enable = true;
+    powerManagement.enable = false;
     powerManagement.finegrained = false;
     modesetting.enable = true;
     nvidiaSettings = true;
   };
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 }

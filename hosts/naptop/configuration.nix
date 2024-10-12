@@ -4,7 +4,6 @@
     ./hardware-configuration.nix
     ../../mods/pc.nix
     ../../mods/kde.nix
-    ./nvidia.nix
   ];
 
   boot.supportedFilesystems = [ "bcachefs" ];
