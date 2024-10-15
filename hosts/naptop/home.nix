@@ -47,6 +47,7 @@
     # Programming
     octaveFull
     python3
+    nodejs_latest
   ];
 
   home.stateVersion = "23.11";
