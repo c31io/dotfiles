@@ -32,8 +32,8 @@
 
   home.packages = with pkgs; [
     # CLI
-    pandoc smartmontools
-    texlive.combined.scheme-small
+    pandoc texlive.combined.scheme-small
+    smartmontools
     # GUI
     bitwarden
     calibre

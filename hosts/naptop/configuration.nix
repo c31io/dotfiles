@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../mods/dict.nix
     ../../mods/pc.nix
     ../../mods/kde.nix
   ];
