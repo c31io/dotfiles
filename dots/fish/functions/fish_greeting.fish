@@ -1,4 +1,9 @@
 function fish_greeting
+    set flake_lock ~/dotfiles/hosts/$hostname/flake.lock
+    set empty_if_up_to_date (fd -p $flake_lock --changed-before 7d)
+    if test -n "$empty_if_up_to_date"
+      echo "flake lock is older than a week"
+    end
     if test $TERM = "alacritty"
         set adage \
         " ℂ𝔸ℝℙ𝔼 𝔻𝕀𝔼𝕄" \
