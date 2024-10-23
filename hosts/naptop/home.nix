@@ -32,14 +32,15 @@
 
   home.packages = with pkgs; [
     # CLI
-    pandoc texlive.combined.scheme-small
+    pandoc texlive.combined.scheme-medium
     smartmontools
     # GUI
     bitwarden
-    calibre
+    #calibre
     fractal
     google-chrome
     gparted exfat
+    thunderbird
     libreoffice-qt-still
     remmina
     telegram-desktop

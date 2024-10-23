@@ -1,3 +1,3 @@
 function vd
-  v ~/vd/$(date -I) $argv; 
+  v ~/vd/$(date -I)
 end

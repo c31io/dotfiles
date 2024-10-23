@@ -38,4 +38,9 @@ return {
     ft = { "markdown" },
     build = "cd app && npm install",
   },
+
+  {
+    "lervag/vimtex",
+    lazy = false,
+  }
 }
