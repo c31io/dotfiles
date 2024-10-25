@@ -33,7 +33,7 @@
   home.packages = with pkgs; [
     # CLI
     pandoc texlive.combined.scheme-medium
-    smartmontools
+    smartmontools unison
     # GUI
     bitwarden
     #calibre
