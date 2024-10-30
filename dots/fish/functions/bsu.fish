@@ -1,3 +1,3 @@
 function bsu
-  nix flake update ~/dotfiles/hosts/$hostname && bs
+  nix flake update --flake ~/dotfiles/hosts/$hostname && bs
 end

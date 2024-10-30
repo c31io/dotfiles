@@ -36,7 +36,7 @@
     smartmontools unison
     # GUI
     bitwarden
-    #calibre
+    calibre
     fractal
     google-chrome
     gparted exfat
