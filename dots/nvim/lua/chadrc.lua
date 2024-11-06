@@ -1,6 +1,6 @@
 local M = {
 	base46 = {
-		theme = "one_light",
+		theme = "ayu_light",
 	},
 
 	ui = {
