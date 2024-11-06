@@ -12,6 +12,8 @@
     alacritty = {
       enable = true;
       settings = {
+        colors.primary.background = "#fcfcfc";
+        colors.primary.foreground = "#5c6166";
         env.TERM = "alacritty";
         font = {
           size = 11;
