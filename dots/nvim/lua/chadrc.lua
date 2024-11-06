@@ -1,7 +1,6 @@
 local M = {
 	base46 = {
-		theme = "onedark",
-		transparency = true,
+		theme = "one_light",
 	},
 
 	ui = {

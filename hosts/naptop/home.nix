@@ -12,7 +12,6 @@
     alacritty = {
       enable = true;
       settings = {
-        colors.primary.background = "#002020";
         env.TERM = "alacritty";
         font = {
           size = 11;
@@ -25,7 +24,6 @@
           }
         ];
         mouse.hide_when_typing = true;
-        window.opacity = 0.8;
       };
     };
   };
