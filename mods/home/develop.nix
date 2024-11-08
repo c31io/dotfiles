@@ -8,6 +8,11 @@ in
     direnv.enable = true;
     zoxide.enable = true;
 
+    bat = {
+      enable = true;
+      config.theme = "Solarized (light)";
+    };
+
     ssh = {
       enable = true;
       matchBlocks = {
@@ -22,7 +27,7 @@ in
 
   home.packages = with pkgs; [
     # CLI
-    bat eza fd htop lsof procs ripgrep
+    eza fd htop lsof procs ripgrep
     tokei unzip
     # NeoVim
     neovim stylua tree-sitter wl-clipboard
