@@ -41,6 +41,7 @@
     google-chrome
     gparted exfat
     thunderbird
+    tuxguitar
     libreoffice-qt-still
     remmina
     telegram-desktop

@@ -1,3 +1,3 @@
 function weather
-    curlx wttr.in/$argv
+    curl wttr.in/$argv
 end
