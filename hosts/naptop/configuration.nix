@@ -13,7 +13,7 @@
   networking.firewall.allowedTCPPorts = [ 1688 8000 ]; # vlmcsd
   services.printing = {
     enable = true;
-    drivers = [ pkgs.hplip ];
+    drivers = [ pkgs.hplipWithPlugin ];
   };
   services.smartd.enable = true;
   nixpkgs.config.allowUnfree = true;

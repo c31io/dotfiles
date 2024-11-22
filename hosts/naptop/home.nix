@@ -43,6 +43,7 @@
     thunderbird
     tuxguitar
     libreoffice-qt-still
+    musescore
     remmina
     telegram-desktop
     ventoy
