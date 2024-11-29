@@ -50,6 +50,7 @@
     # Programming
     octaveFull
     python3
+    nixfmt-rfc-style
     nodejs_latest
   ];
 
