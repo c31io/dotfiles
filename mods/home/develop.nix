@@ -27,7 +27,7 @@ in
 
   home.packages = with pkgs; [
     # CLI
-    eza fd htop lsof procs ripgrep
+    eza file fd htop lsof procs ripgrep
     tokei unzip
     # NeoVim
     neovim stylua tree-sitter wl-clipboard
