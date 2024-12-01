@@ -37,6 +37,7 @@
     # GUI
     bitwarden
     calibre
+    chatbox
     fractal
     google-chrome
     gparted exfat
