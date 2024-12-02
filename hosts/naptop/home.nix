@@ -47,6 +47,7 @@
     remmina
     telegram-desktop
     ventoy
+    zotero
     # Programming
     octaveFull
     python3
