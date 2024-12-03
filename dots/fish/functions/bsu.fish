@@ -1,3 +1,15 @@
+function __confirm_branch
+  while true
+    read -l -P 'not on nixos-unstable, continue?' confirm
+    switch $confirm
+      case Y y
+        return 0
+      case '' N n
+        return 1
+    end
+  end
+end
+
 function bsu
   set np ~/repo/nixpkgs
   if test -d $np
@@ -5,8 +17,14 @@ function bsu
     set branch (git rev-parse --abbrev-ref HEAD)
     if test $branch = "nixos-unstable"
       git pull --depth=1 upstream nixos-unstable:nixos-unstable
+      cd -
+    else
+      if not __confirm_branch
+        echo "aborted"
+        cd -
+        return
+      end
     end
-    cd -
   end
   nix flake update --flake ~/dotfiles/hosts/$hostname && bs
 end
