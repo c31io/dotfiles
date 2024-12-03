@@ -32,11 +32,13 @@
 
   home.packages = with pkgs; [
     # CLI
+    graphviz
     pandoc texlive.combined.scheme-medium
     smartmontools unison
     # GUI
     bitwarden
     calibre
+    discord
     fractal
     google-chrome
     gparted exfat
