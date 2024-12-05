@@ -1,4 +1,4 @@
-function gcma --wraps='git commit --ammend' --description 'alias gcma=git commit --ammend'
-  git commit --ammend $argv
+function gcma --wraps='git commit --amend' --description 'alias gcma=git commit --amend'
+  git commit --amend $argv
         
 end

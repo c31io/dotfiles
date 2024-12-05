@@ -1,3 +1,3 @@
 function dfh
-  bcachefs fs usage -h
+  df -hx tmpfs
 end
