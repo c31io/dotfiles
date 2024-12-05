@@ -21,6 +21,11 @@ in
           port = 443;
           user = "git";
         };
+        "aur.archlinux.org" = {
+          hostname = "aur.archlinux.org";
+          identityFile = "~/.ssh/aur";
+          user = "aur";
+        };
       };
     };
   };
