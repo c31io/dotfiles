@@ -41,6 +41,8 @@ in
     devenv
   ];
 
+  services.lorri.enable = true;
+
   xdg.configFile = {
     "fish".source = link "fish";
     "nvim".source = link "nvim";
