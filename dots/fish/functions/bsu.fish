@@ -16,7 +16,7 @@ function bsu
     cd $np
     set branch (git rev-parse --abbrev-ref HEAD)
     if test $branch = "nixos-unstable"
-      git pull --depth=1 upstream nixos-unstable:nixos-unstable
+      git pull --depth=1 upstream nixos-unstable:nixos-unstable -f
       cd -
     else
       if not __confirm_branch
