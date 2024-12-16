@@ -1,3 +1,9 @@
 function vd
-  v ~/vd/$(date -I)
+  test (count $argv) -gt 1
+  and return 1
+  set base (string escape $argv[1])
+  set dir ~/vd/$base
+  or set dir ~/vd
+  mkdir -p $dir
+  v $dir/$(date -I)
 end
