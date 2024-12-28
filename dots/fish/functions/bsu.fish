@@ -26,5 +26,7 @@ function bsu
       end
     end
   end
-  nix flake update --flake ~/dotfiles/hosts/$hostname && bs
+  nix flake update --flake ~/dotfiles/hosts/$hostname && \
+    git -C ~/dotfiles add --all && \
+    bs
 end
