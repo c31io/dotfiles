@@ -28,5 +28,6 @@ function bsu
   end
   nix flake update --flake ~/dotfiles/hosts/$hostname && \
     git -C ~/dotfiles add --all && \
+    git -C ~/dotfiles commit -m "update $hostname" && \
     bs
 end
