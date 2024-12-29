@@ -2,7 +2,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../mods/dict.nix
     ../../mods/pc.nix
     ../../mods/kde.nix
   ];
@@ -15,6 +14,7 @@
     enable = true;
     binfmt = true;
   };
+  services.dictd.enable = false; #TODO #368885
   services.printing = {
     enable = true;
     drivers = [ pkgs.hplipWithPlugin ];
