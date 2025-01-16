@@ -12,11 +12,12 @@ end
 
 function bsu
   set np ~/repo/nixpkgs
+  set release nixos-unstable
   if test -d $np
     cd $np
     set branch (git rev-parse --abbrev-ref HEAD)
-    if test $branch = "nixos-unstable"
-      git pull --depth=1 upstream nixos-unstable:nixos-unstable -f
+    if test $branch = $release
+      git pull --depth=1 upstream $release:$release -f
       cd -
     else
       if not __confirm_branch
