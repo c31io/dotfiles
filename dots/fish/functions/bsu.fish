@@ -1,4 +1,8 @@
-set release nixos-unstable
+if test $host = 'naptop'
+  set release nixos-unstable
+else
+  set release nixos-24.11
+end
 
 function __confirm_branch
   while true
