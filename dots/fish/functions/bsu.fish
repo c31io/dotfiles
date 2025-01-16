@@ -1,6 +1,8 @@
+set release nixos-24.11
+
 function __confirm_branch
   while true
-    read -l -P 'not on nixos-unstable, continue?' confirm
+    read -l -P "not on $release, continue?" confirm
     switch $confirm
       case Y y
         return 0
@@ -12,7 +14,6 @@ end
 
 function bsu
   set np ~/repo/nixpkgs
-  set release nixos-unstable
   if test -d $np
     cd $np
     set branch (git rev-parse --abbrev-ref HEAD)
