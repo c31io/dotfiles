@@ -1,4 +1,4 @@
-set release nixos-24.11
+set release nixos-unstable
 
 function __confirm_branch
   while true
