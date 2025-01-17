@@ -46,15 +46,17 @@
     tuxguitar
     libreoffice-qt-still
     musescore
+    qbittorrent-enhanced
     remmina
     telegram-desktop
     ventoy
     zotero
     # Programming
-    octaveFull
-    python3
     nixfmt-rfc-style
     nodejs_latest
+    octaveFull
+    python3
+    rustup
   ];
 
   home.stateVersion = "23.11";
