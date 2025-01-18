@@ -24,6 +24,8 @@
     };
 
     configFile = {
+      baloofilerc.General."exclude folders[$e]" = "$HOME/repo/";
+
       kdeglobals.General.BrowserApplication = "firefox.desktop";
       kdeglobals.General.TerminalApplication = "alacritty";
       kdeglobals.General.TerminalService = "Alacritty.desktop";
