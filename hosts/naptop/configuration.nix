@@ -17,7 +17,7 @@
   services.dictd.enable = false; #TODO #368885
   services.printing = {
     enable = true;
-    #drivers = [ pkgs.hplipWithPlugin ]; #TODO #368824
+    drivers = [ pkgs.hplipWithPlugin ];
   };
   services.smartd.enable = true;
   nixpkgs.config.allowUnfree = true;
