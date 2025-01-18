@@ -26,7 +26,7 @@
     };
 
     configFile = {
-      baloofilerc.General."exclude folders[$e]" = "$HOME/repo/";
+      baloofilerc."Basic Settings"."Indexing-Enabled" = false;
 
       kdeglobals.General.BrowserApplication = "firefox.desktop";
       kdeglobals.General.TerminalApplication = "alacritty";
