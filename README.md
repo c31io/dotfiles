@@ -4,11 +4,11 @@
 
 Create your `./hosts/YOUR_HOST/*.nix`, git-add and apply.
 
+Link `/etc/nixos/*` to the right files. Backup your hardware config. Keep your state version.
+
 ```fish
-# Defined in /home/c31io/.config/fish/functions/bs.fish @ line 1
-function bs
-  sudo nixos-rebuild switch --flake ~/dotfiles/hosts/$hostname --show-trace
-end
+nix flake update --flake ~/dotfiles/hosts/$hostname
+sudo nixos-rebuild switch --flake ~/dotfiles/hosts/$hostname --show-trace
 ```
 
 For fresh installations, import `pc.nix` and `kde.nix`.
