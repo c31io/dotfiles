@@ -3,16 +3,18 @@
     enable = true;
 
     shortcuts = {
-      kwin."Increase Opacity" = "Alt+Up,,Increase Opacity of Active Window by 5%";
-      kwin."Decrease Opacity" = "Alt+Down,,Decrease Opacity of Active Window by 5%";
+      kwin = {
+        "Increase Opacity" = "Alt+Up";
+        "Decrease Opacity" = "Alt+Down";
 
-      kwin."Overview" = "Meta+Tab,Meta+W,Toggle Overview";
+        "Overview" = "Meta+Tab";
 
-      kwin."Switch to Next Desktop" = "Meta+],,Switch to Next Desktop";
-      kwin."Switch to Previous Desktop" = "Meta+[,,Switch to Previous Desktop";
+        "Switch to Next Desktop" = "Meta+]";
+        "Switch to Previous Desktop" = "Meta+[";
 
-      kwin."Window Fullscreen" = "Meta+Shift+Up,,Make Window Fullscreen";
-      kwin."Window No Border" = "Meta+H,,Toggle Window Titlebar and Frame";
+        "Window Fullscreen" = "Meta+Shift+Up";
+        "Window No Border" = "Meta+H";
+      };
 
       "services/Alacritty.desktop"."New" = "Meta+Return";
 
