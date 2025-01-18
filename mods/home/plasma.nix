@@ -40,12 +40,12 @@
       {
         description = "No Decoration for Okular";
         match.window-class.value = "okular org.kde.okular";
-        apply."No titlebar and frame" = true;
+        apply.noborder.value = true;
       }
       {
         description = "No Decoration for Alacritty";
         match.window-class.value = "alacritty Alacritty";
-        apply."No titlebar and frame" = true;
+        apply.noborder.value = true;
       }
     ];
   };
