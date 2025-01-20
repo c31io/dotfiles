@@ -18,7 +18,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, plasma-manager, matlab, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, plasma-manager, nix-matlab, ... }:
   let
     username = "c31io";
     system = "x86_64-linux";
