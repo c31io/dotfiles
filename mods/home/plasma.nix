@@ -28,15 +28,22 @@
     configFile = {
       baloofilerc."Basic Settings"."Indexing-Enabled" = false;
 
-      kdeglobals.General.BrowserApplication = "firefox.desktop";
-      kdeglobals.General.TerminalApplication = "alacritty";
-      kdeglobals.General.TerminalService = "Alacritty.desktop";
+      kdeglobals.General = {
+        BrowserApplication = "firefox.desktop";
+        TerminalApplication = "alacritty";
+        TerminalService = "Alacritty.desktop";
+      };
 
-      kwinrc.Desktops.Number = 3;
-      kwinrc.Desktops.Rows = 3;
-      kwinrc.Plugins.fadedesktopEnabled = true;
-      kwinrc.Plugins.slideEnabled = false;
-      kwinrc.Wayland."InputMethod[$e]" = "/run/current-system/sw/share/applications/org.fcitx.Fcitx5.desktop";
+      kwinrc = {
+        Desktops.Number = 3;
+        Desktops.Rows = 3;
+        Plugins.fadedesktopEnabled = true;
+        Plugins.slideEnabled = false;
+        Wayland.InputMethod = {
+          value = "/run/current-system/sw/share/applications/org.fcitx.Fcitx5.desktop";
+          shellExpand = true;
+        };
+      };
     };
 
     window-rules = [
