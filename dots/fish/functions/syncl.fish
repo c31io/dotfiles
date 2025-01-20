@@ -1,3 +1,3 @@
 function syncl
-  unison -sshargs '-p 22222' ~/LSKTP/Shared ssh://l.c31.io//Shared
+  unison -sshargs '-p 22222' ~/Sync ssh://lsktp.c31.io//Sync
 end
