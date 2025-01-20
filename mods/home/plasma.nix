@@ -36,6 +36,7 @@
       kwinrc.Desktops.Rows = 3;
       kwinrc.Plugins.fadedesktopEnabled = true;
       kwinrc.Plugins.slideEnabled = false;
+      kwinrc.Wayland."InputMethod[$e]" = "/run/current-system/sw/share/applications/org.fcitx.Fcitx5.desktop";
     };
 
     window-rules = [
