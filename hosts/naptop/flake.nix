@@ -12,18 +12,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    nix-matlab = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "gitlab:doronbehar/nix-matlab";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, plasma-manager, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, plasma-manager, matlab, ... }:
   let
     username = "c31io";
     system = "x86_64-linux";
-  in 
-  {
+    flake-overlays = [ nix-matlab.overlay ];
+  in {
     nixosConfigurations.naptop = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        ./configuration.nix
+        (import ./configuration.nix flake-overlays)
         home-manager.nixosModules.home-manager
         {
           home-manager.extraSpecialArgs = inputs;
