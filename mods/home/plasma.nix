@@ -32,6 +32,7 @@
       baloofilerc."Basic Settings"."Indexing-Enabled" = false;
 
       kdeglobals.General = {
+        accentColorFromWallpaper = true;
         BrowserApplication = "firefox.desktop";
         TerminalApplication = "alacritty";
         TerminalService = "Alacritty.desktop";
