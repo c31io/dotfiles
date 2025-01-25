@@ -85,6 +85,16 @@
       }
     ];
 
+    kscreenlocker = {
+      autoLock = false;
+      appearance.wallpaperPictureOfTheDay.provider = "bing";
+    };
+
+    workspace = {
+      wallpaperPictureOfTheDay.provider = "bing";
+      wallpaperFillMode = "preserveAspectCrop";
+    };
+
     window-rules = [
       {
         description = "No Decoration for Okular";
