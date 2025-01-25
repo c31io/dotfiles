@@ -7,6 +7,9 @@
         "Increase Opacity" = "Alt+Up";
         "Decrease Opacity" = "Alt+Down";
 
+        "Invert" = "Meta+Ctrl+I";
+        "InvertWindow" = "Meta+Ctrl+U";
+
         "Overview" = "Meta+Tab";
 
         "Switch to Next Desktop" = "Meta+]";
@@ -45,6 +48,41 @@
         };
       };
     };
+
+    panels = [
+      {
+        location = "bottom";
+        widgets = [
+          {
+            kickoff = {
+              sortAlphabetically = true;
+              icon = "nix-snowflake";
+            };
+          }
+          "org.kde.plasma.pager"
+          {
+            iconTasks = {
+              launchers = [];
+            };
+          }
+          "org.kde.plasma.marginsseparator"
+          "org.kde.plasma.systemtray"
+          {
+            digitalClock = {
+              date = {
+                enable = true;
+                format = "isoDate";
+              };
+              time.format = "12h";
+              calendar = {
+                firstDayOfWeek = "monday";
+                showWeekNumbers = true;
+              };
+            };
+          }
+        ];
+      }
+    ];
 
     window-rules = [
       {
