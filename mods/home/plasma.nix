@@ -51,7 +51,8 @@
 
     panels = [
       {
-        location = "bottom";
+        floating = true;
+        hiding = "dodgewindows";
         widgets = [
           {
             kickoff = {
