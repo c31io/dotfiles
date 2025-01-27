@@ -1,4 +1,4 @@
-if test $host = 'naptop'
+if test $hostname = 'naptop'
   set release nixos-unstable
 else
   set release nixos-24.11
