@@ -46,6 +46,7 @@
     thunderbird
     tuxguitar
     libreoffice-qt-still
+    mpv
     musescore
     qbittorrent-enhanced
     remmina
