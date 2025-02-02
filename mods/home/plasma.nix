@@ -26,6 +26,9 @@
 
       "services/google-chrome.desktop"."new-window" = "Meta+C";
       "services/google-chrome.desktop"."new-private-window" = "Meta+Shift+C";
+
+      "services/chromium-browser.desktop"."new-window" = "Meta+U";
+      "services/chromium-browser.desktop"."new-private-window" = "Meta+Shift+U";
     };
 
     configFile = {

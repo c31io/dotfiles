@@ -51,6 +51,7 @@
     qbittorrent-enhanced
     remmina
     telegram-desktop
+    ungoogled-chromium
     ventoy
     zotero
     # Programming
