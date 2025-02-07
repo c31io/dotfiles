@@ -3,15 +3,20 @@
 {
   environment.systemPackages = with pkgs; [
     # doom
-    git emacs ripgrep
+    git
+    emacs
+    ripgrep
     # doom optional
-    coreutils fd clang
+    coreutils
+    fd
+    clang
     # doom :lang
-    discount shellcheck
+    discount
+    shellcheck
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly"]; } )
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     fira-sans
   ];
 }

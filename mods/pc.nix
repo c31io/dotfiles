@@ -12,7 +12,11 @@
     shell = pkgs.fish;
   };
 
-  environment.systemPackages = with pkgs; [ gh git neovim ];
+  environment.systemPackages = with pkgs; [
+    gh
+    git
+    neovim
+  ];
   environment.variables.EDITOR = "nvim";
   networking.networkmanager.enable = true;
   programs.fish.enable = true;
@@ -20,7 +24,10 @@
   services.v2raya.enable = true;
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     substituters = [ "http://mirrors.cernet.edu.cn/nix-channels/store" ];
     trusted-users = [ "c31io" ];
   };

@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -9,12 +14,15 @@
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "lsktp";
-  networking.firewall.allowedTCPPorts = [ 1688 8000 ]; # vlmcsd
+  networking.firewall.allowedTCPPorts = [
+    1688
+    8000
+  ]; # vlmcsd
   programs.appimage = {
     enable = true;
     binfmt = true;
   };
-  services.dictd.enable = false; #TODO #368885
+  services.dictd.enable = false; # TODO #368885
   services.fail2ban.enable = true;
   services.openssh = {
     enable = true;

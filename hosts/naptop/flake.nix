@@ -18,25 +18,33 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, plasma-manager, nix-matlab, ... }:
-  let
-    username = "c31io";
-    system = "x86_64-linux";
-    flake-overlays = [ nix-matlab.overlay ];
-  in {
-    nixosConfigurations.naptop = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [
-        (import ./configuration.nix flake-overlays)
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.extraSpecialArgs = inputs;
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users."${username}" = import ./home.nix;
-          home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
-        }
-      ];
+  outputs =
+    inputs@{
+      nixpkgs,
+      home-manager,
+      plasma-manager,
+      nix-matlab,
+      ...
+    }:
+    let
+      username = "c31io";
+      system = "x86_64-linux";
+      flake-overlays = [ nix-matlab.overlay ];
+    in
+    {
+      nixosConfigurations.naptop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          (import ./configuration.nix flake-overlays)
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = inputs;
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users."${username}" = import ./home.nix;
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+          }
+        ];
+      };
     };
-  };
 }

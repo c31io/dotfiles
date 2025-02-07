@@ -32,12 +32,25 @@ in
 
   home.packages = with pkgs; [
     # CLI
-    atop btop htop procs 
-    eza file fd lsof ripgrep
-    tokei unzip
+    atop
+    btop
+    htop
+    procs
+    eza
+    file
+    fd
+    lsof
+    ripgrep
+    tokei
+    unzip
     # NeoVim
-    neovim stylua tree-sitter wl-clipboard
-    gcc gnumake lua-language-server
+    neovim
+    stylua
+    tree-sitter
+    wl-clipboard
+    gcc
+    gnumake
+    lua-language-server
     # Develop
     devenv
   ];

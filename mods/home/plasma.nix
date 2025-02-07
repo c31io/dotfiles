@@ -67,7 +67,7 @@
           "org.kde.plasma.pager"
           {
             iconTasks = {
-              launchers = [];
+              launchers = [ ];
             };
           }
           "org.kde.plasma.marginsseparator"
