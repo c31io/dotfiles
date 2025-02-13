@@ -38,6 +38,7 @@
     texlive.combined.scheme-medium
     smartmontools
     unison
+    baidupcs-go
     # GUI
     bitwarden
     calibre
