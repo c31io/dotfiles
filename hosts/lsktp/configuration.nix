@@ -17,7 +17,13 @@ flake-overlays:
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "lsktp";
+  networking = {
+    hostName = "lsktp";
+    networkmanager = {
+      enable = true;
+      dispatcherScripts = [ { source = ./ddns.sh; } ];
+    };
+  };
 
   programs.appimage = {
     enable = true;
