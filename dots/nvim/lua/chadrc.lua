@@ -5,6 +5,7 @@ local M = {
 
 	ui = {
 		statusline = {
+      enabled = true,
 			separator_style = "round",
 		},
 
