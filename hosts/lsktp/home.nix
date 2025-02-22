@@ -3,6 +3,7 @@
 {
   imports = [
     ../../mods/home/develop.nix
+    ../../mods/home/helix.nix
     ../../mods/home/plasma.nix
     ../../mods/home/yt-dlp.nix
   ];
