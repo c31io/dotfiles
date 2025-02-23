@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../mods/home/alacritty.nix
     ../../mods/home/develop.nix
     ../../mods/home/helix.nix
     ../../mods/home/plasma.nix
@@ -10,26 +11,6 @@
 
   programs = {
     vscode.enable = true;
-
-    alacritty = {
-      enable = true;
-      settings = {
-        colors.primary.background = "#fcfcfc";
-        colors.primary.foreground = "#5c6166";
-        env.TERM = "alacritty";
-        font = {
-          size = 11;
-          normal.family = "JetBrainsMonoNLNerdFontMono";
-        };
-        keyboard.bindings = [
-          {
-            key = "F11";
-            action = "ToggleFullscreen";
-          }
-        ];
-        mouse.hide_when_typing = true;
-      };
-    };
   };
 
   home.packages = with pkgs; [
@@ -48,12 +29,9 @@
     gparted
     exfat
     thunderbird
-    tuxguitar
     libreoffice-qt-still
-    musescore
     qbittorrent-enhanced
     remmina
-    telegram-desktop
     ventoy
     zotero
     # Programming
