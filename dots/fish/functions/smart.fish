@@ -1,5 +1,7 @@
 function smart
     for disk in /dev/sd?
-        sudo smartctl $disk -A | rg Reallocated
+        echo $disk
+        sudo smartctl $disk -x | rg --color never 'overall|ID#|Reallocated'
+        echo
     end
 end
