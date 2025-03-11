@@ -59,8 +59,8 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1741666507,
-        "narHash": "sha256-Cg/fVPP2JL98UZFW8lLewrF5bEO+xLyNDXvK/KT7pv4=",
+        "lastModified": 1741669209,
+        "narHash": "sha256-hVV4CkNJ+M/oKjzV1SebOuqhYYriaMg7MX93nABBbak=",
         "path": "/home/c31io/repo/nixpkgs",
         "type": "path"
       },

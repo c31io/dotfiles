@@ -28,7 +28,7 @@
       "nix-command"
       "flakes"
     ];
-    substituters = [ "http://mirrors.cernet.edu.cn/nix-channels/store" ];
+    substituters = [ "http://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
     trusted-users = [ "c31io" ];
   };
 }
