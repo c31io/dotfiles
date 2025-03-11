@@ -9,6 +9,8 @@
         "path" = "/home/c31io/Sync";
         "read only" = "no";
         "guest ok" = "no";
+        # fuck apple
+        "vfs objects" = "catia fruit streams_xattr";
       };
     };
   };

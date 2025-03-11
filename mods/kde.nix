@@ -50,6 +50,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     firefox
+    kdePackages.krdc
   ];
 
   fonts.packages = with pkgs; [
