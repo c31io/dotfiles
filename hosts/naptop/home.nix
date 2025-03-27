@@ -13,11 +13,14 @@
   };
 
   home.packages = with pkgs; [
+    # System
+    exfat
+    smartmontools
+    ventoy
     # CLI
     graphviz
     pandoc
     texlive.combined.scheme-medium
-    smartmontools
     unison
     baidupcs-go
     # GUI
@@ -27,7 +30,6 @@
     fractal
     google-chrome
     gparted
-    exfat
     thunderbird
     tuxguitar
     libreoffice-qt-still
@@ -37,7 +39,6 @@
     remmina
     telegram-desktop
     ungoogled-chromium
-    ventoy
     zotero
     # Programming
     nixfmt-rfc-style
