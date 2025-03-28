@@ -41,6 +41,8 @@
         TerminalService = "Alacritty.desktop";
       };
 
+      kcminputrc.Keyboard.NumLock = 0;
+
       kwinrc = {
         Desktops.Number = 3;
         Desktops.Rows = 3;
