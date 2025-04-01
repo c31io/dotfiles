@@ -18,6 +18,7 @@
     graphviz
     pandoc
     texlive.combined.scheme-medium
+    tmux
     smartmontools
     unison
     # GUI
