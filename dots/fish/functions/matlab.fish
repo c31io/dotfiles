@@ -1,3 +1,15 @@
 function matlab
-  distrobox enter matlab -a "--env LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6" -- ".local/MATLAB/R2024a/bin/matlab"
+  # distrobox create -i ubuntu:24.04 -n matlab -Y
+  # distrobox enter matlab
+
+  # sudo apt -y install ca-certificates debianutils libasound2t64 libatomic1 libc6 libcairo-gobject2 libcairo2 libcap2 libcrypt1 libcups2t64 libdrm2 libfontconfig1 libfribidi0 libgbm1 libgdk-pixbuf-2.0-0 libgl1 libglib2.0-0t64 libgstreamer-plugins-base1.0-0 libgstreamer1.0-0 libgtk-3-0t64 libice6 libltdl7 libnettle8t64 libnspr4 libnss3 libpam0g libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0 libpixman-1-0 libsndfile1 libtirpc3t64 libudev1 libuuid1 libwayland-client0 libxcomposite1 libxcursor1 libxdamage1 libxfixes3 libxfont2 libxft2 libxinerama1 libxrandr2 libxt6t64 libxtst6 libxxf86vm1 locales locales-all make net-tools procps sudo unzip zlib1g
+  # sudo apt -y install xorg
+
+  if test $hostname = 'lsktp'
+    set release 'R2024a'
+  else
+    set release 'R2024b'
+  end
+
+  distrobox enter matlab -a "--env LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6" -- ".local/MATLAB/$release/bin/matlab"
 end
