@@ -6,7 +6,7 @@ end
 
 function __confirm_branch
   while true
-    read -l -P "not on $release, continue?" confirm
+    read -l -P "not on $release, continue? " confirm
     switch $confirm
       case Y y
         return 0
@@ -32,8 +32,5 @@ function bsu
       end
     end
   end
-  nix flake update --flake ~/dotfiles/hosts/$hostname && \
-    git -C ~/dotfiles add --all && \
-    git -C ~/dotfiles commit -m "update $hostname" && \
-    bs
+  nix flake update --flake ~/dotfiles/hosts/$hostname && bs
 end

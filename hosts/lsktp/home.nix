@@ -26,6 +26,7 @@
     calibre
     discord
     fractal
+    #gitbutler
     google-chrome
     gparted
     exfat
