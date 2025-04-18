@@ -27,6 +27,8 @@ flake-overlays:
     options = [
       "rw"
       "uid=c31io"
+      "gid=users"
+      "umask=0022"
     ];
   };
 
