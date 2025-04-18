@@ -15,12 +15,19 @@ flake-overlays:
     ./samba.nix
   ];
 
-  boot.supportedFilesystems = [ "bcachefs" ];
+  boot.supportedFilesystems = [
+    "bcachefs"
+    "ntfs"
+  ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   fileSystems."/data" = {
     device = "/dev/disk/by-partuuid/9cd1f0b8-bc81-4dc3-ad8a-37a0e9410a0d";
-    fsType = "ntfs";
+    fsType = "ntfs-3g";
+    options = [
+      "rw"
+      "uid=c31io"
+    ];
   };
 
   networking = {
