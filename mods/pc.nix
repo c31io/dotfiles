@@ -17,7 +17,6 @@
     git
     neovim
   ];
-  environment.variables.EDITOR = "nvim";
   networking.networkmanager.enable = true;
   programs.fish.enable = true;
   services.journald.storage = "volatile";

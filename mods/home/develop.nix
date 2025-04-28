@@ -13,6 +13,23 @@ in
       config.theme = "Solarized (light)";
     };
 
+    helix = {
+      enable = true;
+      defaultEditor = true;
+      settings = {
+        editor = {
+          cursor-shape = {
+            insert = "bar";
+            normal = "block";
+            select = "underline";
+          };
+          cursorline = true;
+          lsp.display-inlay-hints = true;
+        };
+        theme = "ayu_light";
+      };
+    };
+
     ssh = {
       enable = true;
       matchBlocks = {
