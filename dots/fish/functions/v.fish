@@ -6,20 +6,20 @@ function v
       set file ""
     else if test -f $argv[1]
       set dir (git -C (dirname $argv[1]) rev-parse --show-toplevel)
-      or nvim $argv && return
+      or $EDITOR $argv && return
       set file (realpath $argv[1])
     else
-      nvim $argv && return
+      $EDITOR $argv && return
     end
 
     cd $dir
     test -f .envrc
     and eval (direnv export fish)
-    nvim $file
+    $EDITOR $file
 
   else
 
-    nvim $argv
+    $EDITOR $argv
 
   end
 end

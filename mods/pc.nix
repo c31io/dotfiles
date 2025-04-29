@@ -15,8 +15,10 @@
   environment.systemPackages = with pkgs; [
     gh
     git
-    neovim
+    helix
   ];
+
+  environment.variables.EDITOR = "hx";
   networking.networkmanager.enable = true;
   programs.fish.enable = true;
   services.journald.storage = "volatile";
