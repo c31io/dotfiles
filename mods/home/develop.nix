@@ -26,6 +26,12 @@ in
           cursorline = true;
           lsp.display-inlay-hints = true;
         };
+        keys.normal.z = {
+          a = ":xa";
+          q = ":q!";
+          w = ":w";
+          x = ":x";
+        };
         theme = "ayu_light";
       };
     };
