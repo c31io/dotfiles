@@ -16,7 +16,7 @@
     # System
     exfat
     smartmontools
-    ventoy
+    #ventoy
     # CLI
     graphviz
     pandoc
