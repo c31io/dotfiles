@@ -34,7 +34,7 @@
     libreoffice-qt-still
     qbittorrent-enhanced
     remmina
-    ventoy
+    #ventoy
     zotero
     # Programming
     nixfmt-rfc-style
