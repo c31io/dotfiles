@@ -9,8 +9,9 @@
     ../../mods/home/yt-dlp.nix
   ];
 
-  programs = {
-    vscode.enable = true;
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
   };
 
   home.packages = with pkgs; [
@@ -24,7 +25,7 @@
     # GUI
     bitwarden
     calibre
-    discord
+    #discord
     fractal
     #gitbutler
     gparted
