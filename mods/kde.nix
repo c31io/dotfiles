@@ -49,8 +49,8 @@
   hardware.bluetooth.powerOnBoot = true;
   environment.systemPackages = with pkgs; [
     alacritty
-    firefox
     kdePackages.krdc
+    ungoogled-chromium
   ];
 
   fonts.packages = with pkgs; [
