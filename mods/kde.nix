@@ -21,10 +21,17 @@
   };
 
   services = {
-    displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;
+    displayManager.sddm.enable = true;
+
     libinput.enable = true;
     printing.enable = true;
+
+    xrdp = {
+      defaultWindowManager = "startplasma-x11";
+      enable = true;
+      openFirewall = true;
+    };
 
     xserver = {
       enable = true;
