@@ -61,7 +61,7 @@ flake-overlays:
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAqoyPCI1c/Jz+U9khyB4kPaiE0/4kq7ii/2/WHLIojV c31io"
   ];
 
-  #nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = flake-overlays;
   environment.systemPackages = with pkgs; [ matlab ];
 
