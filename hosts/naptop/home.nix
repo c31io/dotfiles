@@ -26,9 +26,7 @@
     # GUI
     bitwarden
     calibre
-    discord
     fractal
-    google-chrome
     gparted
     thunderbird
     tuxguitar
