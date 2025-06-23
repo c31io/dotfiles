@@ -11,6 +11,7 @@ flake-overlays:
     ./hardware-configuration.nix
     ../../mods/pc.nix
     ../../mods/kde.nix
+    ../../mods/rdp.nix
     ../../mods/distrobox.nix
     ./samba.nix
   ];

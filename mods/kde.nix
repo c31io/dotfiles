@@ -27,12 +27,6 @@
     libinput.enable = true;
     printing.enable = true;
 
-    xrdp = {
-      defaultWindowManager = "startplasma-x11";
-      enable = true;
-      openFirewall = true;
-    };
-
     xserver = {
       enable = true;
       desktopManager.xterm.enable = false;
