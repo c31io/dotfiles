@@ -74,8 +74,12 @@ in
     gcc
     gnumake
     lua-language-server
-    # Develop
+    # Environment
     devenv
+    # Vibe
+    claude-code
+    vscode
+    code-cursor
   ];
 
   services.lorri.enable = true;
