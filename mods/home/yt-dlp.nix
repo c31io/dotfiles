@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       ignore-errors = true;
-      output = "~/youtube/%(playlist)s/%(playlist_index)s\\ -\\ %(title)s.%(ext)s";
+      output = "~/yt-dlp/%(playlist)s/%(playlist_index)s\\ -\\ %(title)s.%(ext)s";
       write-sub = true;
       write-auto-sub = true;
       sub-langs = "en.\\*";
