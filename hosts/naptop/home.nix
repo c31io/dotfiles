@@ -24,14 +24,14 @@
     calibre
     fractal
     gparted
-    thunderbird
-    tuxguitar
     libreoffice-qt-still
     mpv
     musescore
     qbittorrent-enhanced
     remmina
     telegram-desktop
+    thunderbird
+    tuxguitar
     ungoogled-chromium
     zotero
     # Programming
