@@ -13,7 +13,7 @@
     # CLI
     graphviz
     pandoc
-    texlive.combined.scheme-medium
+    # texlive.combined.scheme-medium
     tmux
     smartmontools
     unison
