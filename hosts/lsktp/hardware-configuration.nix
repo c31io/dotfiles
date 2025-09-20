@@ -34,10 +34,6 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/4999-FD01";
     fsType = "vfat";
-    options = [
-      "fmask=0022"
-      "dmask=0022"
-    ];
   };
 
   swapDevices = [ ];
