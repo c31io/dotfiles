@@ -16,7 +16,7 @@
     # CLI
     graphviz
     pandoc
-    texlive.combined.scheme-medium
+    # texlive.combined.scheme-medium
     unison
     baidupcs-go
     # GUI
