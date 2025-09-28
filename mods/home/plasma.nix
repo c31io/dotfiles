@@ -19,6 +19,24 @@
         "Window No Border" = "Meta+H";
       };
 
+      "org.chromium.Chromium" = {
+        "5E20835ACD6F47E67B482EF922CA447D-autofill_card" = ",none,Autofill the last used card for the current website";
+        "5E20835ACD6F47E67B482EF922CA447D-autofill_identity" = ",none,Autofill the last used identity for the current website";
+        "5E20835ACD6F47E67B482EF922CA447D-autofill_login" = ",none,Autofill the last used login for the current website";
+        "5E20835ACD6F47E67B482EF922CA447D-generate_password" = ",none,Generate and copy a new random password to the clipboard";
+        "5E20835ACD6F47E67B482EF922CA447D-lock_vault" = ",none,Lock the vault";
+        "703F48DDE4A8C8604AD619129E785252-launch-element-picker" = ",none,Enter element picker mode";
+        "703F48DDE4A8C8604AD619129E785252-launch-element-zapper" = ",none,Enter element zapper mode";
+        "703F48DDE4A8C8604AD619129E785252-launch-logger" = ",none,Open the logger";
+        "703F48DDE4A8C8604AD619129E785252-open-dashboard" = ",none,Open the dashboard";
+        "703F48DDE4A8C8604AD619129E785252-relax-blocking-mode" = ",none,Relax blocking mode";
+        "703F48DDE4A8C8604AD619129E785252-toggle-cosmetic-filtering" = ",none,Toggle cosmetic filtering";
+        "703F48DDE4A8C8604AD619129E785252-toggle-javascript" = ",none,Toggle JavaScript";
+        "8EEF175B998DB6C5655DAC29181577E2-addSite" = ",none,Toggle current site";
+        "8EEF175B998DB6C5655DAC29181577E2-switchEngine" = ",none,Theme generation mode";
+        "8EEF175B998DB6C5655DAC29181577E2-toggle" = ",none,Toggle extension";
+      };
+
       "services/Alacritty.desktop"."New" = "Meta+Return";
 
       "services/chromium-browser.desktop"."new-window" = "Meta+U";
