@@ -20,7 +20,6 @@
     unison
     baidupcs-go
     # GUI
-    bitwarden
     calibre
     fractal
     gparted

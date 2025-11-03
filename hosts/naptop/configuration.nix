@@ -38,7 +38,10 @@ flake-overlays:
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = flake-overlays;
-  environment.systemPackages = with pkgs; [ matlab ];
+  environment.systemPackages = with pkgs; [
+    linuxPackages_latest.cpupower
+    matlab
+  ];
 
   system.stateVersion = "23.11";
 }
