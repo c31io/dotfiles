@@ -20,10 +20,14 @@
       };
 
       "org.chromium.Chromium" = {
-        "5E20835ACD6F47E67B482EF922CA447D-autofill_card" = ",none,Autofill the last used card for the current website";
-        "5E20835ACD6F47E67B482EF922CA447D-autofill_identity" = ",none,Autofill the last used identity for the current website";
-        "5E20835ACD6F47E67B482EF922CA447D-autofill_login" = ",none,Autofill the last used login for the current website";
-        "5E20835ACD6F47E67B482EF922CA447D-generate_password" = ",none,Generate and copy a new random password to the clipboard";
+        "5E20835ACD6F47E67B482EF922CA447D-autofill_card" =
+          ",none,Autofill the last used card for the current website";
+        "5E20835ACD6F47E67B482EF922CA447D-autofill_identity" =
+          ",none,Autofill the last used identity for the current website";
+        "5E20835ACD6F47E67B482EF922CA447D-autofill_login" =
+          ",none,Autofill the last used login for the current website";
+        "5E20835ACD6F47E67B482EF922CA447D-generate_password" =
+          ",none,Generate and copy a new random password to the clipboard";
         "5E20835ACD6F47E67B482EF922CA447D-lock_vault" = ",none,Lock the vault";
         "703F48DDE4A8C8604AD619129E785252-launch-element-picker" = ",none,Enter element picker mode";
         "703F48DDE4A8C8604AD619129E785252-launch-element-zapper" = ",none,Enter element zapper mode";
@@ -48,7 +52,7 @@
 
       kdeglobals.General = {
         accentColorFromWallpaper = true;
-        BrowserApplication = "firefox.desktop";
+        BrowserApplication = "chromium-browser.desktop";
         TerminalApplication = "alacritty";
         TerminalService = "Alacritty.desktop";
       };

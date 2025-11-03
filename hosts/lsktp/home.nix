@@ -18,7 +18,6 @@
     smartmontools
     unison
     # GUI
-    bitwarden
     calibre
     #discord
     fractal
