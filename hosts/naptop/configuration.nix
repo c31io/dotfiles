@@ -40,7 +40,6 @@ flake-overlays:
   nixpkgs.overlays = flake-overlays;
   environment.systemPackages = with pkgs; [
     linuxPackages_latest.cpupower
-    matlab
   ];
 
   system.stateVersion = "23.11";

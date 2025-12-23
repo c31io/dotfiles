@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "flake-compat": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1747046372,
-        "narHash": "sha256-CIVLLkVgvHYbgI2UpXvIIBJ12HWgX+fjA8Xf8PUmqCY=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "9100a0f413b0c601e0533d1d94ffd501ce2e7885",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -23,44 +7,23 @@
         ]
       },
       "locked": {
-        "lastModified": 1761878381,
-        "narHash": "sha256-lCRaipHgszaFZ1Cs8fdGJguVycCisBAf2HEFgip5+xU=",
+        "lastModified": 1766387499,
+        "narHash": "sha256-AjK3/UKDzeXFeYNLVBaJ3+HLE9he1g5UrlNd4/BM3eA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "4ac96eb21c101a3e5b77ba105febc5641a8959aa",
+        "rev": "527ad07e6625302b648ed3b28c34b62a79bd103e",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
         "type": "github"
-      }
-    },
-    "nix-matlab": {
-      "inputs": {
-        "flake-compat": "flake-compat",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1754476755,
-        "narHash": "sha256-vSF0VMEmPMzwNkrXIZwkhOSYmKES9BaDK/LlEe7/q8E=",
-        "owner": "doronbehar",
-        "repo": "nix-matlab",
-        "rev": "0e9c9fb660f9e1a1e4d59fd083e0212a15b513e2",
-        "type": "gitlab"
-      },
-      "original": {
-        "owner": "doronbehar",
-        "repo": "nix-matlab",
-        "type": "gitlab"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1761962125,
-        "narHash": "sha256-knz1S+vCuyRoIdmzAzUKKwFYVe/3XxL/F5bHu5srMc0=",
+        "lastModified": 1766396801,
+        "narHash": "sha256-qIpSkIlB58HLOkWVjwTZdh1/Xm2wwAfT5LRu2xe6koQ=",
         "path": "/home/c31io/repo/nixpkgs",
         "type": "path"
       },
@@ -79,11 +42,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761078382,
-        "narHash": "sha256-JNJesbe9MMN1Brq41BHEpuH+Z+Zg74y/nI5AFZX84Vw=",
+        "lastModified": 1763909441,
+        "narHash": "sha256-56LwV51TX/FhgX+5LCG6akQ5KrOWuKgcJa+eUsRMxsc=",
         "owner": "nix-community",
         "repo": "plasma-manager",
-        "rev": "27dfa61b64d0cdb8e4ba6f3aaa4d4e067d64cb5c",
+        "rev": "b24ed4b272256dfc1cc2291f89a9821d5f9e14b4",
         "type": "github"
       },
       "original": {
@@ -95,7 +58,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs",
         "plasma-manager": "plasma-manager"
       }

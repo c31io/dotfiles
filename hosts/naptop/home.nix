@@ -30,7 +30,7 @@
     remmina
     telegram-desktop
     thunderbird
-    tuxguitar
+    #tuxguitar
     ungoogled-chromium
     zotero
     # Programming
@@ -38,7 +38,7 @@
     nodejs_latest
     octaveFull
     python3
-    rustup
+    #rustup
   ];
 
   home.stateVersion = "23.11";
