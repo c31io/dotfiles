@@ -12,10 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nix-matlab = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "gitlab:doronbehar/nix-matlab";
-    };
   };
 
   outputs =
@@ -23,13 +19,12 @@
       nixpkgs,
       home-manager,
       plasma-manager,
-      nix-matlab,
       ...
     }:
     let
       username = "c31io";
       system = "x86_64-linux";
-      flake-overlays = [ nix-matlab.overlay ];
+      flake-overlays = [ ];
     in
     {
       nixosConfigurations.lsktp = nixpkgs.lib.nixosSystem {
