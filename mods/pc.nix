@@ -22,7 +22,7 @@
   networking.networkmanager.enable = true;
   programs.fish.enable = true;
   services.journald.storage = "volatile";
-  services.v2raya.enable = true;
+  #services.v2raya.enable = true;
 
   nix.settings = {
     experimental-features = [
