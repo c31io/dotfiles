@@ -12,3 +12,4 @@ function cg
     else
         echo "invalid input. skipped"
     end
+end
