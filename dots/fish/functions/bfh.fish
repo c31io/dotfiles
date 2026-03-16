@@ -1,3 +1,3 @@
 function bfh
-  bcachefs fs usage -h
+    sudo bcachefs fs usage -h
 end
