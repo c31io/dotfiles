@@ -1,6 +1,6 @@
 function fish_greeting
-    set flake_lock ~/dotfiles/hosts/$hostname/flake.lock
-    set empty_if_up_to_date (fd -p $flake_lock --changed-before 1month)
+    set lock_dir ~/dotfiles/hosts/$hostname
+    set empty_if_up_to_date (fd flake.lock $lock_dir --changed-before 1month)
     if test -n "$empty_if_up_to_date"
         echo "flake lock is older than a month"
     end

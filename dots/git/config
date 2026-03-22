@@ -13,6 +13,7 @@
 
 [core]
 	editor = nvim --clean --
+	excludesfile = ~/.config/git/ignore
 
 [diff]
     tool = nvimdiff

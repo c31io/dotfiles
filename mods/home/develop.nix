@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   link = import ./link.nix config;
@@ -6,6 +6,7 @@ in
 {
   programs = {
     direnv.enable = true;
+    nh.enable = true;
     zoxide.enable = true;
 
     bat = {
@@ -13,31 +14,9 @@ in
       config.theme = "Solarized (light)";
     };
 
-    helix = {
-      enable = true;
-      defaultEditor = true;
-      settings = {
-        editor = {
-          cursor-shape = {
-            insert = "bar";
-            normal = "block";
-            select = "underline";
-          };
-          cursorline = true;
-          lsp.display-inlay-hints = true;
-        };
-        keys.normal.z = {
-          a = ":xa";
-          q = ":q!";
-          w = ":w";
-          x = ":x";
-        };
-        theme = "ayu_light";
-      };
-    };
-
     ssh = {
       enable = true;
+      enableDefaultConfig = false;
       matchBlocks = {
         "github.com" = {
           hostname = "ssh.github.com";
@@ -55,12 +34,12 @@ in
 
   home.packages = with pkgs; [
     # CLI
-    atop
     btop
     htop
     procs
     eza
     file
+    fish
     fd
     lsof
     ripgrep
@@ -70,7 +49,6 @@ in
     neovim
     stylua
     tree-sitter
-    wl-clipboard
     gcc
     gnumake
     lua-language-server
@@ -80,9 +58,12 @@ in
     claude-code
     vscode
     code-cursor
+  ] ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
+    atop
+    wl-clipboard
   ];
 
-  services.lorri.enable = true;
+  services.lorri.enable = pkgs.stdenv.hostPlatform.isLinux;
 
   xdg.configFile = {
     "fish".source = link "fish";

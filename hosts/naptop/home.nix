@@ -34,7 +34,7 @@
     ungoogled-chromium
     zotero
     # Programming
-    nixfmt-rfc-style
+    nixfmt
     nodejs_latest
     octaveFull
     python3

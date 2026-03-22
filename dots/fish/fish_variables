@@ -1,5 +1,0 @@
-# This file contains fish universal variable definitions.
-# VERSION: 3.0
-SETUVAR __fish_initialized:4300
-SETUVAR f:/home/c31io/dotfiles/dots/fish/functions/
-SETUVAR fish_user_paths:/home/c31io/\x2elocal/bin
