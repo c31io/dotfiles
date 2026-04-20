@@ -14,8 +14,10 @@ flake-overlays:
     ../../mods/distrobox.nix
   ];
 
-  boot.supportedFilesystems = [ "bcachefs" ];
+  boot.supportedFilesystems = [ "bcachefs" "kvm-intel" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  virtualisation.libvirtd.enable = true;
 
   networking.hostName = "naptop";
   networking.firewall.allowedTCPPorts = [

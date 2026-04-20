@@ -9,7 +9,7 @@
 
   users.users.c31io = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "kvm" ];
     shell = pkgs.fish;
   };
 

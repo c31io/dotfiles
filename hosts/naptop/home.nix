@@ -21,7 +21,6 @@
     baidupcs-go
     # GUI
     calibre
-    fractal
     gparted
     libreoffice-qt-still
     mpv
