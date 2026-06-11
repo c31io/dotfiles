@@ -52,12 +52,6 @@ in
     gcc
     gnumake
     lua-language-server
-    # Environment
-    devenv
-    # Vibe
-    claude-code
-    vscode
-    code-cursor
   ] ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
     atop
     wl-clipboard
