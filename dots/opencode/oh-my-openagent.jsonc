@@ -1,0 +1,141 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+
+  "agents": {
+    "sisyphus": {
+      "model": "kimi-for-coding/k2p6",
+      "variant": "max",
+      "temperature": 0.3,
+      "top_p": 0.9,
+      "fallback_models": [
+        { "model": "deepseek/deepseek-v4-pro", "variant": "max", "temperature": 0.3 }
+      ]
+    },
+    "prometheus": {
+      "model": "kimi-for-coding/k2p6",
+      "variant": "max",
+      "temperature": 0.2,
+      "top_p": 0.85,
+      "fallback_models": [
+        { "model": "deepseek/deepseek-v4-pro", "variant": "max", "temperature": 0.2 }
+      ]
+    },
+    "atlas": {
+      "model": "kimi-for-coding/k2p6",
+      "variant": "high",
+      "temperature": 0.3,
+      "top_p": 0.9,
+      "fallback_models": [
+        { "model": "deepseek/deepseek-v4-pro", "variant": "high", "temperature": 0.3 }
+      ]
+    },
+    "metis": {
+      "model": "kimi-for-coding/k2p6",
+      "variant": "high",
+      "temperature": 0.3,
+      "top_p": 0.9,
+      "fallback_models": [
+        { "model": "deepseek/deepseek-v4-pro", "variant": "high", "temperature": 0.3 }
+      ]
+    },
+    "hephaestus": {
+      "model": "deepseek/deepseek-v4-pro",
+      "variant": "max",
+      "temperature": 0.2,
+      "top_p": 0.85,
+      "fallback_models": [
+        { "model": "kimi-for-coding/k2p6", "variant": "max", "temperature": 0.2 }
+      ]
+    },
+    "oracle": {
+      "model": "deepseek/deepseek-v4-pro",
+      "variant": "high",
+      "temperature": 0.1,
+      "top_p": 0.8,
+      "fallback_models": [
+        { "model": "kimi-for-coding/k2p6", "variant": "high", "temperature": 0.1 }
+      ]
+    },
+    "momus": {
+      "model": "deepseek/deepseek-v4-pro",
+      "variant": "xhigh",
+      "temperature": 0.1,
+      "top_p": 0.8,
+      "fallback_models": [
+        { "model": "kimi-for-coding/k2p6", "variant": "max", "temperature": 0.1 }
+      ]
+    },
+    "librarian": {
+      "model": "deepseek/deepseek-v4-flash",
+      "variant": "high",
+      "temperature": 0.2,
+      "top_p": 0.85,
+      "fallback_models": [
+        { "model": "kimi-for-coding/k2p6", "variant": "high", "temperature": 0.2 }
+      ]
+    },
+    "explore": {
+      "model": "deepseek/deepseek-v4-flash",
+      "variant": "high",
+      "temperature": 0.1,
+      "top_p": 0.8,
+      "fallback_models": [
+        { "model": "kimi-for-coding/k2p6", "variant": "high", "temperature": 0.1 }
+      ]
+    },
+    "multimodal-looker": {
+      "model": "kimi-for-coding/k2p6",
+      "variant": "high",
+      "temperature": 0.3,
+      "top_p": 0.9
+    },
+    "sisyphus-junior": {
+      "model": "deepseek/deepseek-v4-flash",
+      "variant": "high",
+      "temperature": 0.3,
+      "top_p": 0.9,
+      "fallback_models": [
+        { "model": "kimi-for-coding/k2p6", "variant": "high", "temperature": 0.3 }
+      ]
+    }
+  },
+
+  "categories": {
+    "unspecified-high": {
+      "model": "kimi-for-coding/k2p6",
+      "variant": "max"
+    },
+    "unspecified-low": {
+      "model": "deepseek/deepseek-v4-flash",
+      "variant": "high"
+    },
+    "deep": {
+      "model": "deepseek/deepseek-v4-pro",
+      "variant": "max"
+    },
+    "ultrabrain": {
+      "model": "deepseek/deepseek-v4-pro",
+      "variant": "max"
+    },
+    "quick": {
+      "model": "deepseek/deepseek-v4-flash",
+      "variant": "high"
+    },
+    "writing": {
+      "model": "kimi-for-coding/k2p6",
+      "variant": "high"
+    }
+  },
+
+  "background_task": {
+    "providerConcurrency": {
+      "kimi-for-coding": 3,
+      "deepseek": 3
+    },
+    "modelConcurrency": {
+      "kimi-for-coding/k2p6": 2,
+      "deepseek/deepseek-v4-pro": 2,
+      "deepseek/deepseek-v4-flash": 4
+    }
+  }
+}
