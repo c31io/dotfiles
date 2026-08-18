@@ -1,0 +1,71 @@
+* {
+  border: none;
+  border-radius: 12px;
+  font-family: "FiraCode Nerd Font", "Noto Sans", sans-serif;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: #cdd6f4;
+}
+
+tooltip {
+  background: #1e1e2e;
+  border: 1px solid #313244;
+  border-radius: 12px;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  margin: 4px 2px;
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border-radius: 10px;
+}
+
+#workspaces button.active {
+  background: #89b4fa;
+  color: #1e1e2e;
+}
+
+#workspaces button:hover {
+  background: #313244;
+  color: #89b4fa;
+}
+
+#clock,
+#network,
+#pulseaudio,
+#battery,
+#tray {
+  background: #1e1e2e;
+  padding: 0 10px;
+  margin: 4px 2px;
+  border-radius: 10px;
+}
+
+#clock {
+  color: #f9e2af;
+}
+
+#network {
+  color: #a6e3a1;
+}
+
+#pulseaudio {
+  color: #cba6f7;
+}
+
+#battery {
+  color: #94e2d5;
+}
+
+#battery.warning {
+  color: #f9e2af;
+}
+
+#battery.critical {
+  color: #f38ba8;
+}

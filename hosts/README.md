@@ -11,3 +11,7 @@ An ancient Dell OptiPlex 7040 PC.
 ## hyperz
 
 A Hyper-V client.
+
+## trilio
+
+A PC running niri.

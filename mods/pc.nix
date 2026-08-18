@@ -24,4 +24,5 @@
   programs.fish.enable = true;
   services.journald.storage = "volatile";
   #services.v2raya.enable = true;
+  services.xserver.xkb.options = "terminate:ctrl_alt_bksp,caps:swapescape";
 }

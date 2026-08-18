@@ -1,0 +1,48 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 8,
+  "margin-top": 4,
+  "margin-bottom": 0,
+  "margin-left": 4,
+  "margin-right": 4,
+  "modules-left": ["niri/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "pulseaudio", "battery", "tray"],
+  "niri/workspaces": {
+    "format": "{index}",
+    "on-click": "activate",
+    "all-outputs": true
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%a %d %b %H:%M}",
+    "tooltip-format": "{:%A %d %B %Y}"
+  },
+  "network": {
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": "󰤭",
+    "tooltip-format": "{ifname}: {ipaddr}"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "tray": {
+    "spacing": 8
+  }
+}
