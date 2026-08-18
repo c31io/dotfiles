@@ -21,6 +21,10 @@
 
   environment.variables.EDITOR = "hx";
   networking.networkmanager.enable = true;
+  programs.clash-verge = {
+    enable = true;
+    serviceMode = true;
+  };
   programs.fish.enable = true;
   services.journald.storage = "volatile";
   #services.v2raya.enable = true;

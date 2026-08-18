@@ -30,4 +30,9 @@ flake-overlays:
   nixpkgs.overlays = flake-overlays;
 
   system.stateVersion = "26.05";
+
+  xdg.terminal-exec = {
+    enable = true;
+    settings.default = [ "Alacritty.desktop" ];
+  };
 }

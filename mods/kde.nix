@@ -7,10 +7,6 @@
 
 {
   programs.kdeconnect.enable = true;
-  programs.clash-verge = {
-    enable = true;
-    serviceMode = true;
-  };
 
   i18n = {
     inputMethod = {
