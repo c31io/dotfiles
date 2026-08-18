@@ -41,17 +41,11 @@ in
     file
     fish
     fd
+    gitui
     lsof
     ripgrep
     tokei
     unzip
-    # NeoVim
-    neovim
-    stylua
-    tree-sitter
-    gcc
-    gnumake
-    lua-language-server
   ] ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
     atop
     wl-clipboard
@@ -61,7 +55,6 @@ in
 
   xdg.configFile = {
     "fish".source = link "fish";
-    "nvim".source = link "nvim";
     "git".source = link "git";
   };
 }
