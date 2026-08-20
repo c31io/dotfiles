@@ -27,6 +27,7 @@
     swaylock
     playerctl
     brightnessctl
+    xwayland-satellite
   ];
 
   fonts.packages = with pkgs; [

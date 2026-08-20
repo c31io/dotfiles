@@ -29,6 +29,8 @@ flake-overlays:
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = flake-overlays;
 
+  services.flatpak.enable = true;
+
   system.stateVersion = "26.05";
 
   xdg.terminal-exec = {
