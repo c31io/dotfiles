@@ -29,15 +29,12 @@
 
   environment.variables.EDITOR = "hx";
   networking.networkmanager.enable = true;
-  networking.networkmanager.unmanaged = [ "interface-name:Meta" "interface-name:Mihomo" ];
 
   programs.clash-verge = {
     enable = true;
     serviceMode = true;
     tunMode = true;
   };
-
-  systemd.services.clash-verge.serviceConfig.CapabilityBoundingSet = [ "CAP_NET_BIND_SERVICE" ];
 
   programs.fish.enable = true;
   services.journald.storage = "volatile";
