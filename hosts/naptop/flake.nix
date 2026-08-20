@@ -24,7 +24,7 @@
     let
       username = "c31io";
       system = "x86_64-linux";
-      flake-overlays = [];
+      flake-overlays = [ ];
     in
     {
       nixosConfigurations.naptop = nixpkgs.lib.nixosSystem {

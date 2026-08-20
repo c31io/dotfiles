@@ -14,7 +14,10 @@ flake-overlays:
     ../../mods/distrobox.nix
   ];
 
-  boot.supportedFilesystems = [ "bcachefs" "kvm-intel" ];
+  boot.supportedFilesystems = [
+    "bcachefs"
+    "kvm-intel"
+  ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   virtualisation.libvirtd.enable = true;

@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   link = import ./link.nix config;
@@ -6,7 +11,6 @@ in
 {
   programs = {
     direnv.enable = true;
-    nh.enable = true;
     zoxide.enable = true;
 
     bat = {
@@ -32,24 +36,28 @@ in
     };
   };
 
-  home.packages = with pkgs; [
-    # CLI
-    btop
-    htop
-    procs
-    eza
-    file
-    fish
-    fd
-    gitui
-    lsof
-    ripgrep
-    tokei
-    unzip
-  ] ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
-    atop
-    wl-clipboard
-  ];
+  home.packages =
+    with pkgs;
+    [
+      # CLI
+      btop
+      htop
+      procs
+      eza
+      file
+      fish
+      fd
+      delta
+      gitui
+      lsof
+      ripgrep
+      tokei
+      unzip
+    ]
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
+      atop
+      wl-clipboard
+    ];
 
   services.lorri.enable = pkgs.stdenv.hostPlatform.isLinux;
 

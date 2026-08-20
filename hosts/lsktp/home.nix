@@ -31,7 +31,6 @@
     #ventoy
     zotero
     # Programming
-    nixfmt
     nodejs_latest
     octaveFull
     python3

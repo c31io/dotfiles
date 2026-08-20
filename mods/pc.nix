@@ -25,15 +25,19 @@
     gh
     git
     helix
+    nixfmt
   ];
 
   environment.variables.EDITOR = "hx";
   networking.networkmanager.enable = true;
 
-  programs.clash-verge = {
-    enable = true;
-    serviceMode = true;
-    tunMode = true;
+  programs = {
+    clash-verge = {
+      enable = true;
+      serviceMode = true;
+      tunMode = true;
+    };
+    nh.enable = true;
   };
 
   programs.fish.enable = true;

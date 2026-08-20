@@ -12,17 +12,15 @@
 	helper = !gh auth git-credential
 
 [core]
-	editor = nvim --clean --
+    pager = delta
 	excludesfile = ~/.config/git/ignore
 
-[diff]
-    tool = nvimdiff
+[interactive]
+    diffFilter = delta --color-only
 
-[difftool "nvimdiff"]
-    cmd = nvim --clean -d \"$LOCAL\" \"$REMOTE\"
+[delta]
+    navigate = true
+    light = true
 
 [merge]
-	tool = nvimdiff
-
-[mergetool "nvimdiff"]
-	cmd = nvim --clean -d \"$LOCAL\" \"$MERGED\" \"$BASE\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd J\"
+    conflictStyle = zdiff3
