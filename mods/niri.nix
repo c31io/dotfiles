@@ -13,7 +13,8 @@
     sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "maldives";
+      theme = "sddm-astronaut-theme";
+      extraPackages = [ pkgs.sddm-astronaut ];
     };
     defaultSession = "niri";
   };
@@ -25,6 +26,7 @@
     waybar
     fuzzel
     swaylock
+    sddm-astronaut
     playerctl
     brightnessctl
     xwayland-satellite

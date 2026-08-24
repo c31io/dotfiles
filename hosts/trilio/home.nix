@@ -11,6 +11,10 @@
   ];
 
   home.packages = with pkgs; [
+    feishu
+    glab
+    mpv
+    nodejs
     opencode
   ];
 
