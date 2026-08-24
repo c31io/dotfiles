@@ -9,7 +9,15 @@
   "margin-right": 4,
   "modules-left": ["niri/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["network", "pulseaudio", "battery", "tray"],
+  "modules-right": ["cpu", "memory", "network", "pulseaudio", "battery", "tray"],
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "interval": 2
+  },
+  "memory": {
+    "format": "󰾆 {percentage}%",
+    "interval": 2
+  },
   "niri/workspaces": {
     "format": "{index}",
     "on-click": "activate",

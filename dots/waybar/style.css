@@ -36,6 +36,8 @@ tooltip {
 }
 
 #clock,
+#cpu,
+#memory,
 #network,
 #pulseaudio,
 #battery,
@@ -48,6 +50,14 @@ tooltip {
 
 #clock {
   color: #f9e2af;
+}
+
+#cpu {
+  color: #89b4fa;
+}
+
+#memory {
+  color: #f5c2e7;
 }
 
 #network {

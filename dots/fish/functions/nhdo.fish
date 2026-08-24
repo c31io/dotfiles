@@ -1,4 +1,4 @@
-function nh
-  nohup $argv &> /dev/null &
-  disown
+function nhdo
+    nohup $argv &>/dev/null &
+    disown
 end
