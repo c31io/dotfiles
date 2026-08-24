@@ -7,6 +7,7 @@
   };
 
   hardware.graphics.enable = true;
+  hardware.bluetooth.enable = true;
   services.libinput.enable = true;
 
   services.displayManager = {
@@ -21,14 +22,15 @@
 
   environment.systemPackages = with pkgs; [
     alacritty
-    ungoogled-chromium
-    wl-clipboard
-    waybar
-    fuzzel
-    swaylock
-    sddm-astronaut
-    playerctl
+    bluetui
     brightnessctl
+    fuzzel
+    playerctl
+    sddm-astronaut
+    swaylock
+    ungoogled-chromium
+    waybar
+    wl-clipboard
     xwayland-satellite
   ];
 
