@@ -1,6 +1,14 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
+  imports = [
+    ./fcitx5.nix
+  ];
+
   programs.niri = {
     enable = true;
     package = pkgs.niri;
