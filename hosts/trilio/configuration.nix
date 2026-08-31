@@ -31,7 +31,11 @@ flake-overlays:
 
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [ glibc ];
+    libraries = with pkgs; [
+      glibc
+      pulseaudio
+      alsa-lib
+    ];
   };
 
   services.flatpak.enable = true;
