@@ -29,6 +29,11 @@ flake-overlays:
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = flake-overlays;
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [ glibc ];
+  };
+
   services.flatpak.enable = true;
 
   system.stateVersion = "26.05";

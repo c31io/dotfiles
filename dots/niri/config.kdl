@@ -25,8 +25,11 @@ output "HDMI-A-1" {
 }
 
 output "eDP-1" {
-    // Centered under the 2560-wide external monitor: (2560 - 1645) / 2 ≈ 458.
-    position x=458 y=1440
+    // Logical 1920x1200 (panel is 2880x1800 @ 1.5 scale) so fonts aren't blown up.
+    scale 1.5
+
+    // Centered under the 2560-wide external monitor: (2560 - 1920) / 2 = 320.
+    position x=320 y=1440
 
     layout {
         background-color "#181825"
