@@ -12,6 +12,7 @@
   };
 
   environment.variables.EDITOR = "hx";
+  environment.systemPackages = [ pkgs.nh ];
 
   programs.fish.enable = true;
   nixpkgs.config.allowUnfree = true;
