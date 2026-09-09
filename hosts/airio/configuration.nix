@@ -20,5 +20,6 @@
   system.keyboard = {
     enableKeyMapping = true;
     swapLeftCtrlAndFn = true;
+    swapCapsLockAndEscape = true;
   };
 }
