@@ -1,2 +1,6 @@
 dots/fish/conf.d/rustup.fish
 dots/fish/conf.d/uv.env.fish
+dots/fish/completions/copilot.fish
+dots/fish/completions/docker.fish
+dots/fish/completions/kubectl.fish
+dots/fish/completions/orbctl.fish
