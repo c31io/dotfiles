@@ -16,6 +16,7 @@
     mpv
     nodejs
     opencode
+    todesk
   ];
 
   home.enableNixpkgsReleaseCheck = false;
