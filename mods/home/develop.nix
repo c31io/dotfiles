@@ -21,16 +21,16 @@ in
     ssh = {
       enable = true;
       enableDefaultConfig = false;
-      matchBlocks = {
+      settings = {
         "github.com" = {
-          hostname = "ssh.github.com";
-          port = 443;
-          user = "git";
+          HostName = "ssh.github.com";
+          Port = 443;
+          User = "git";
         };
         "aur.archlinux.org" = {
-          hostname = "aur.archlinux.org";
-          identityFile = "~/.ssh/aur";
-          user = "aur";
+          HostName = "aur.archlinux.org";
+          IdentityFile = "~/.ssh/aur";
+          User = "aur";
         };
       };
     };
