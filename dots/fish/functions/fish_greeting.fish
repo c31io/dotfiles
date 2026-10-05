@@ -4,7 +4,7 @@ function fish_greeting
     if test -n "$empty_if_up_to_date"
         echo "flake lock is older than a month"
     end
-    if test $TERM = alacritty
+    if test $TERM = alacritty -o $TERM = xterm-ghostty
         set adage \
             " ℂ𝔸ℝℙ𝔼 𝔻𝕀𝔼𝕄" \
             " 𝕋𝔼𝕄ℙ𝕌𝕊 𝔽𝕌𝔾𝕀𝕋" \

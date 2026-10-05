@@ -15,5 +15,6 @@
     };
   };
 
+  home.file.".hushLogin".text = "";
   home.stateVersion = "25.11";
 }
