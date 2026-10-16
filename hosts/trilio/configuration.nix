@@ -39,6 +39,7 @@ flake-overlays:
   };
 
   services.flatpak.enable = true;
+  services.todesk.enable = true;
 
   system.stateVersion = "26.05";
 
