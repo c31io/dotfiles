@@ -10,7 +10,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   i18n.defaultLocale = "en_US.UTF-8";
-  time.timeZone = "Asia/Shanghai";
+  time.timeZone = "Asia/Singapore";
 
   users.users.c31io = {
     isNormalUser = true;
