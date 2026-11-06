@@ -11,6 +11,7 @@ flake-overlays:
     ./hardware-configuration.nix
     ../../mods/pc.nix
     ../../mods/niri.nix
+    ../../mods/distrobox.nix
   ];
 
   fileSystems = {

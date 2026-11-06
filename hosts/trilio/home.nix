@@ -15,8 +15,6 @@
     glab
     mpv
     nodejs
-    opencode
-    vscode-fhs
   ];
 
   home.enableNixpkgsReleaseCheck = false;
