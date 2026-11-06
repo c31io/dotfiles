@@ -14,4 +14,5 @@ A Hyper-V client.
 
 ## trilio
 
-A PC running niri.
+A PC running niri by default, with an alternate Xorg/Xfce session available in
+SDDM for testing incoming ToDesk connections.

@@ -42,6 +42,11 @@ flake-overlays:
   services.flatpak.enable = true;
   services.todesk.enable = true;
 
+  services.xserver = {
+    enable = true;
+    desktopManager.xfce.enable = true;
+  };
+
   system.stateVersion = "26.05";
 
   xdg.terminal-exec = {

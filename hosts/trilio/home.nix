@@ -12,9 +12,12 @@
 
   home.packages = with pkgs; [
     feishu
+    freerouting
     glab
+    kicad
     mpv
     nodejs
+    omp
   ];
 
   home.enableNixpkgsReleaseCheck = false;
